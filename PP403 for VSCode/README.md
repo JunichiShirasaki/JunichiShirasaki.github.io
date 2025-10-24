@@ -1,1 +1,0 @@
-# JunichiShirasaki.github.io

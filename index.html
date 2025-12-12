@@ -48,8 +48,8 @@
     </h1>
     <p style="margin-top: 0px; color: rgb(55, 31, 50)">
         <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Junichi Shirasaki | <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a> | <a
-            href="https://www.github.com/YOUR_GITHUB">GitHub</a>
+        Junichi Shirasaki | <a href="/project.html">Project Page</a> | 
+        <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
         This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
@@ -215,6 +215,25 @@
         // let figure_3_spec = ...
         // vegaEmbed('#Location3', figure_3_spec)
 
+        let chart_files=[
+            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-05-liberation-day/visualisation/fig3_uk-exports-us-mode.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json",
+            "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-11-anglo-american-a-tale-of-two-deficits/visualisation/fig3_uk-us-trade-balance.json"
+        ];
+
+        let chart_ids = [
+            "chart1",
+            "chart2",
+            "chart3"
+        ]
+
+        for(let i=0; i<10; i++) {
+            console.log(i)
+
+            console/log(chart_ids[i], chart_files[i])
+
+            vegaEmbed(chart_ids[i], chart_files[i])
+        }
 
     </script>
 

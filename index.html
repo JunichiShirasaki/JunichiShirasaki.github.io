@@ -36,7 +36,14 @@
         #chartGrid {
             display: flex;
         }
-        
+        .cc-title {
+        color: green;
+        text-align: center;
+        }
+        .chart-title strong {
+         font-weight: 800;
+         font-size: 1.1em;
+        }
     </style>
 </head>
 
@@ -52,7 +59,7 @@
         <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
+        My portfolio of charts  
     </h3>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
@@ -67,48 +74,71 @@
 
     <section>
         <div class="chart-description">
-            <h2>CC1. Hosting. Display charts in your own site<br> 
-                Chart1<br>
-                 exports to the US, by transport mode</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This bar chart illustrates UK exports to the US by mode of transport. Air accounts for the largest share, around $37 billion, followed by sea at about $28 billion.
+            <h2 class="cc-title">
+                CC1: Hosting. Display charts in your own site<br> 
+            </h2>
+            <p> 
+                The first task is to add two charts using the vegaEmbed function.<br>
+                My graphs in this code challenges are taken from the Liberation Day,in the Economics Observatory webpage.
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart1<br>
+                 UK exports to the US, by transport mode</strong>
+            </p>     
+            <p> 
+                This bar chart illustrates UK exports to the US by mode of transport. Air freight accounts for the largest share, around $38 billion, followed by sea transport at about $30 billion.
             </p>
         </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location1"></figure> 
+            <p> 
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> 
+                <!-- URL: Economic Observatory -->
+            </p>
 
-
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Week1: Chart 2<br> 
-                Reciprocal tariffs, major trading partners</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+         <div class="chart-description">
+               <p class="chart-title"> 
+                <strong>Chart2<br>
+                 Reciprocal tariffs, major trading partners</strong>
+            </p> 
+            <p> 
                 This bar graph presents reciprocal tariff rates among major US trading partners. Vietnam accounts for the highest rate at 46%.
+            </p> 
+            </div>
+        <figure id="Location2"></figure> 
+            <p> 
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> 
+                <!-- URL: Economic Observatory -->
             </p>
-        </div>
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-
-
     </section>
+
 
     <section>
         <div class="chart-description">
-            <h2>Week1: Chart 3<br>
-                 Trade balance</h2>
+            <h2 class="cc-title">
+                CC2. Building. Create your own visualisations<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to add two charts using the create tool in the Economics Observatory Data Hub.<br>
+                My graphs in this code challenges are taken from the Liberation Day,in the Economics Observatory webpage.
+            </p>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line graph compares trade balances in goods and services about the two nations: the UK and the US.
+                This line graph illustrates the shift in the number of homicide in England and Wales.<br>
+                Data source: Office for national statistics
             </p>
         </div>
         <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
-    </section>
 
     <section>
         <div class="chart-description">
-            <h2>Week2: Chart 1<br> 
+            <h2 class="cc-title">
+                CC2. Building. Create your own visualisations<br> 
                 yearly change in the number of homicide</h2>
+            <p> 
+                The task in this code challenge is to add two charts using the create tool in the Economics Observatory Data Hub.<br>
+                My graphs in this code challenges are taken from the Liberation Day,in the Economics Observatory webpage.
+            </p>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 This line graph illustrates the shift in the number of homicide in England and Wales.<br>
                 Data source: Office for national statistics

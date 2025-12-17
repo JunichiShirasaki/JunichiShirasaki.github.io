@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Blaming individuals for COVID-19 infection: agree vs disagree",
+    "subtitle": "UK, US, Japan (percent of respondents)",
+    "anchor": "start"
+  },
+  "data": {
+    "values": [
+      {"country": "UK", "group": "Disagree", "value": 96.52},
+      {"country": "UK", "group": "Agree", "value": 3.48},
+      {"country": "US", "group": "Disagree", "value": 95.25},
+      {"country": "US", "group": "Agree", "value": 4.75},
+      {"country": "Japan", "group": "Disagree", "value": 84.75},
+      {"country": "Japan", "group": "Agree", "value": 15.25}
+    ]
+  },
+  "transform": [
+    {"calculate": "datum.value/100", "as": "p"},
+    {"calculate": "format(datum.value, '.2f') + '%'", "as": "label"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": ["UK", "US", "Japan"]
+        },
+        "x": {
+          "field": "p",
+          "type": "quantitative",
+          "stack": "normalize",
+          "scale": {"domain": [0, 1]},
+          "axis": {
+            "format": "%",
+            "title": "Share of respondents",
+            "values": [0, 0.2, 0.4, 0.6, 0.8, 1]
+          }
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Agree", "Disagree"],
+            "range": ["#a6352a", "#2f4f6f"]
+          },
+          "legend": {"title": null}
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.group == 'Agree'"}],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontSize": 11,
+        "color": "white",
+        "dx": -170
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": ["UK", "US", "Japan"]
+        },
+        "x": {"field": "p", "type": "quantitative", "stack": "normalize"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.group == 'Disagree'"}],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "fontSize": 11,
+        "align": "right",
+        "dx": -50,
+        "color": "white"
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": ["UK", "US", "Japan"]
+        },
+        "x": {"field": "p", "type": "quantitative", "stack": "normalize"},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "resolve": {"axis": {"x": "shared"}, "scale": {"x": "shared"}},
+  "config": {}
+}

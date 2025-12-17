@@ -149,28 +149,36 @@
             </h2>
             <p> 
                 The task in this code challenge is to create and embed two charts and comment on what I find.<br>
-                The topic I set is "Do low unemployment rates in the UK necesarrily indicate a strong labor market?".
+                The topic I set is "Do low unemployment rates in the UK necessarily indicate a strong labour market?".
             </p>
             <p class="chart-title"> 
                 <strong>Chart5<br>
                  Unemployment rate in the UK</strong>
             </p> 
             <p> 
-                This line chart illustrates annual nuclear power generation in Japan in GWh, using data from the IEA via the Economics Observatory API.
+                UK unemployment is much lower than in the 1980s and 1990s peaks, which can mean fewer people are unemployed while actively looking for work.
             </p>
         </div>
         <figure id="Location5"></figure>
+        <p> 
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms"> Office for National Statistics</a> 
+                <!-- URL: Office for National Statistics -->
+        </p>
 
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Chart6<br>
-                 Renewable Energy Generation in China (GWh)</strong>
+                 Employment rate in the UK</strong>
             </p> 
             <p> 
-                This line chart illustrates annual renewable energy output in China in GWh, using data from the IEA via the Economics Observatory API.
+             The employment rate grows only slowly, which can suggest low unemployment does not necessarily mean more people are actually working.
             </p>
         </div>
         <figure id="Location6"></figure>
+        <p> 
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms"> Office for National Statistics</a> 
+                <!-- URL: Office for National Statistics -->
+        </p>
     </section>
 
 
@@ -266,8 +274,9 @@
         let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_3_spec = "CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_4_spec = "CC2_Chart4_Json_Graph_China_Renewable.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_9_spec = "wk2_visualization.vl-2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_5_spec = "CC3_wk2_Unemployment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_6_spec = "CC3_Employment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_9_spec = "wk2_visualization.vl-2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_11_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_7_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_8_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
@@ -280,10 +289,12 @@
         vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+       
+        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        
+        vegaEmbed('#Location6', figure_6_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         
         vegaEmbed('#Location9', figure_9_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location11', figure_11_spec)
         

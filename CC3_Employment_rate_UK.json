@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Office for national statistics, UK Unemployment rate (aged 16 and over), yearly change",
+  "description": "Office for national statistics, UK Employment rate (aged 16 to 64), yearly change",
   "data": {
-    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Unemployment_rate_UK.csv"
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC3_Employment_rate_UK.csv"
   },
-  "title": {"text": "Unemployment rate (aged 16 and over)"},
+  "title": {"text": "Employment rate (aged 16 to 64)"},
   "width":700,
   "mark": {
     "type": "line",

@@ -118,15 +118,64 @@
                 CC2. Building. Create your own visualisations<br> 
             </h2>
             <p> 
-                The task in this code challenge is to add two charts using the create tool in the Economics Observatory Data Hub.<br>
-                My graphs in this code challenges are taken from the Liberation Day,in the Economics Observatory webpage.
+                The task in this code challenge is to create and embed two charts using the create tool in the Economics Observatory Data Hub.<br>
             </p>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line graph illustrates the shift in the number of homicide in England and Wales.<br>
-                Data source: Office for national statistics
+            <p class="chart-title"> 
+                <strong>Chart3<br>
+                 Nuclear Power Generation in Japan (GWh)</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual nuclear power generation in Japan in GWh, using data from the IEA via the Economics Observatory API.
             </p>
         </div>
-        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location3"></figure>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart4<br>
+                 Renewable Energy Generation in China (GWh)</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual renewable energy output in China in GWh, using data from the IEA via the Economics Observatory API.
+            </p>
+        </div>
+        <figure id="Location4"></figure>
+    </section>
+        
+<section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC3. Debate. Use a visualisation in policy commentary<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to create and embed two charts and comment on what I find.<br>
+                The topic I set is "Do low unemployment rates in the UK necesarrily indicate a strong labor market?".
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart5<br>
+                 Unemployment rate in the UK</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual nuclear power generation in Japan in GWh, using data from the IEA via the Economics Observatory API.
+            </p>
+        </div>
+        <figure id="Location5"></figure>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart6<br>
+                 Renewable Energy Generation in China (GWh)</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual renewable energy output in China in GWh, using data from the IEA via the Economics Observatory API.
+            </p>
+        </div>
+        <figure id="Location6"></figure>
+    </section>
+
+
+
+
 
 
 
@@ -144,7 +193,7 @@
                 Data source: Office for national statistics
             </p>
         </div>
-        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location9"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -158,7 +207,6 @@
                 Data source: Office for national statistics
             </p>
         </div>
-        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -171,7 +219,7 @@
                 The source of this chart is shiller 2025.
             </p>
         </div>
-        <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -216,10 +264,11 @@
         //let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-05-liberation-day/visualisation/fig3_uk-exports-us-mode.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-11-anglo-american-a-tale-of-two-deficits/visualisation/fig3_uk-us-trade-balance.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_4_spec = "wk2_visualization.vl-2.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_5_spec = "wk2_Unemployment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_6_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_3_spec = "CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_4_spec = "CC2_Chart4_Json_Graph_China_Renewable.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_9_spec = "wk2_visualization.vl-2.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_5_spec = "CC3_wk2_Unemployment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_11_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_7_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_8_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
 
@@ -231,10 +280,12 @@
         vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        
+        vegaEmbed('#Location9', figure_9_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
-        vegaEmbed('#Location6', figure_6_spec)
+        vegaEmbed('#Location11', figure_11_spec)
         
         vegaEmbed('#Location7', figure_7_spec)
 

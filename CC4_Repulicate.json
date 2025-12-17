@@ -4,7 +4,6 @@
   "height": 180,
   "title": {
     "text": "Blaming individuals for COVID-19 infection: agree vs disagree",
-    "subtitle": "UK, US, Japan (percent of respondents)",
     "anchor": "start"
   },
   "data": {
@@ -19,28 +18,41 @@
   },
   "transform": [
     {"calculate": "datum.value/100", "as": "p"},
-    {"calculate": "format(datum.value, '.2f') + '%'", "as": "label"}
+    {"calculate": "format(datum.value, '.2f') + '%'", "as": "label"},
+    {"calculate": "datum.group == 'Disagree' ? 0 : 1", "as": "grp_order"},
+    {
+      "stack": "p",
+      "groupby": ["country"],
+      "sort": [{"field": "grp_order", "order": "ascending"}],
+      "as": ["x0", "x1"],
+      "offset": "normalize"
+    },
+    {"filter": "datum.x1 >= 0.8"},
+    {"calculate": "max(datum.x0, 0.8)", "as": "x0c"},
+    {"calculate": "max(datum.x1, 0.8)", "as": "x1c"},
+    {"calculate": "(datum.x0c + datum.x1c)/2", "as": "x_mid_c"}
   ],
   "layer": [
     {
-      "mark": {"type": "bar"},
+      "mark": {"type": "bar", "clip": true},
       "encoding": {
         "y": {
           "field": "country",
           "type": "nominal",
-          "sort": ["UK", "US", "Japan"]
+          "sort": ["UK", "US", "Japan"],
+          "axis": {"title": null}
         },
         "x": {
-          "field": "p",
+          "field": "x0c",
           "type": "quantitative",
-          "stack": "normalize",
-          "scale": {"domain": [0, 1]},
+          "scale": {"domain": [0.8, 1]},
           "axis": {
             "format": "%",
-            "title": "Share of respondents",
-            "values": [0, 0.2, 0.4, 0.6, 0.8, 1]
+            "title": null,
+            "values": [0.8, 0.85, 0.9, 0.95, 1]
           }
         },
+        "x2": {"field": "x1c"},
         "color": {
           "field": "group",
           "type": "nominal",
@@ -48,8 +60,27 @@
             "domain": ["Agree", "Disagree"],
             "range": ["#a6352a", "#2f4f6f"]
           },
-          "legend": {"title": null}
+          "legend": {"title": null, "values": ["Disagree", "Agree"]}
         }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.group == 'Disagree'"}],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontSize": 20,
+        "color": "white"
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": ["UK", "US", "Japan"]
+        },
+        "x": {"field": "x_mid_c", "type": "quantitative"},
+        "text": {"field": "label"}
       }
     },
     {
@@ -59,27 +90,6 @@
         "baseline": "middle",
         "align": "center",
         "fontSize": 20,
-        "color": "white",
-        "dx": -500
-      },
-      "encoding": {
-        "y": {
-          "field": "country",
-          "type": "nominal",
-          "sort": ["UK", "US", "Japan"]
-        },
-        "x": {"field": "p", "type": "quantitative", "stack": "normalize"},
-        "text": {"field": "label"}
-      }
-    },
-    {
-      "transform": [{"filter": "datum.group == 'Disagree'"}],
-      "mark": {
-        "type": "text",
-        "baseline": "middle",
-        "fontSize": 20,
-        "align": "right",
-        "dx": -50,
         "color": "white"
       },
       "encoding": {
@@ -88,11 +98,10 @@
           "type": "nominal",
           "sort": ["UK", "US", "Japan"]
         },
-        "x": {"field": "p", "type": "quantitative", "stack": "normalize"},
+        "x": {"field": "x_mid_c", "type": "quantitative"},
         "text": {"field": "label"}
       }
     }
   ],
-  "resolve": {"axis": {"x": "shared"}, "scale": {"x": "shared"}},
   "config": {}
 }

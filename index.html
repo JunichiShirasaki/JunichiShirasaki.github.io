@@ -189,7 +189,8 @@
             </h2>
 
             <p> 
-                The task in this code challenge is to replicate charts used by some organizations and to modify it into more appropriate manner.<br>
+                The task in this code challenge is to replicate a chart used by some organizations and to modify it into more appropriate manner.<br>
+                This chart in the iamge below was used by Fukushima TV to compare attitudes toward blaming individuals for COVID-19 infection in different countries. 
             </p>
 
              <!-- CC4: Original chart image -->
@@ -213,10 +214,10 @@
 
             <p class="chart-title"> 
                 <strong>Chart7<br>
-                 The repulication of the chart above</strong>
+                 The replication of the chart above</strong>
             </p> 
             <p> 
-                UK unemployment is much lower than in the 1980s and 1990s peaks, which can mean fewer people are unemployed while actively looking for work.
+                I replicated the original chart in Vega-Lite. I approximated the data to match the visual structure, colors and axes. (I translated Japanese words into Englsih.)
             </p>
         </div>
         <figure id="Location7"></figure>
@@ -228,7 +229,7 @@
                  Improved version</strong>
             </p> 
             <p> 
-             The employment rate grows only slowly, which can suggest low unemployment does not necessarily mean more people are actually working.
+             I corrected the truncated axis, restored a full 0-100% scale, clarified labels and reordered categories to avoid misleading visual emphasis.
             </p>
         </div>
         <figure id="Location8"></figure>
@@ -329,6 +330,7 @@
         let figure_4_spec = "CC2_Chart4_Json_Graph_China_Renewable.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_5_spec = "CC3_wk2_Unemployment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_6_spec = "CC3_Employment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_7_spec = "CC4_Repulicate.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_8_spec = "CC4_Improved.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_9_spec = "wk2_visualization.vl-2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_11_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
@@ -347,6 +349,8 @@
         vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         
         vegaEmbed('#Location6', figure_6_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        
+        vegaEmbed('#Location7', figure_7_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         
         vegaEmbed('#Location8', figure_8_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         

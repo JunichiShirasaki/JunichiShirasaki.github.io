@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 600,
+  "height": {"step": 80},
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC5_Scraping_Data_manufacturing.csv"
+  },
+  "transform": [
+    {"filter": "datum.Measure == 'Value (millions of US$)'"},
+    {"calculate": "toNumber(datum.Value)", "as": "value_number"}
+  ],
+  "encoding": {
+    "y": {
+      "field": "Country",
+      "type": "nominal",
+      "sort": {"field": "value_number", "order": "descending"},
+      "axis": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#bbb9c9"},
+      "encoding": {
+        "x": {
+          "field": "value_number",
+          "type": "quantitative",
+          "title": "Manufacturing output (million US$)"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "x": 5,
+        "baseline": "middle",
+        "color": "black"
+      },
+      "encoding": {"text": {"field": "Country"}}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -10,
+        "baseline": "middle",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {"field": "value_number", "type": "quantitative"},
+        "text": {"field": "value_number", "type": "quantitative", "format": ","}
+      }
+    }
+  ],
+  "config": {}
+}

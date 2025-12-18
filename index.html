@@ -257,8 +257,8 @@
         <p> 
                 Data Source: <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">The World Bank</a><br>
                 Base URL for API of the World Bank: https://api.worldbank.org/v2/ <br>
-                The endpoint of the API I used in this chart: country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5
-                To collect data using the World Bank API of the World Bank, I identified the codes of countries for Japan and the United Kingdom, and the indicator code for Carbon Dioxide emissions.<br>
+                The endpoint of the API I used in this chart: country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5<br>
+                To collect data using the World Bank API, I identified the codes of countries for Japan and the United Kingdom, and the indicator code for Carbon Dioxide emissions.<br>
                 The full URL used in the chart is as follows:<br>
                 <strong>https://api.worldbank.org/v2/country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=1000</strong>
         </p>
@@ -269,12 +269,12 @@
                  The chart using scraping: Top three countries by manufacturing output</strong>
             </p> 
             <p> 
-             I scraped a Wikipedia table, cleaned the data into tidy format and created a bar chart comparing manufacturing output in China, the US and Japan.
+             I scraped a Wikipedia table, cleaned the data into tidy long format and visulaised top manufacturing output (China, US, Japan).
             </p>
         </div>
         <figure id="Location10"></figure>
         <p> 
-            Data Source:<a href="https://en.wikipedia.org/wiki/Manufacturing"> Wikipedis: Manufacturing</a> 
+            Data Source:<a href="https://en.wikipedia.org/wiki/Manufacturing"> Wikipedia: Manufacturing</a> 
             <!-- URL: Wikipedia -->
         </p>
         <p>
@@ -283,6 +283,44 @@
     </section>
 
 
+<section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC6. Loops. Build a dashboard.<br> 
+            </h2>
+
+            <p> 
+                The task in this code challenge is to use a loop to batch download six different series as JSON files and use a loop in my Javascript in order to embed the six charts.<br> 
+            </p>
+
+            
+         </figure>
+
+            <p class="chart-title"> 
+                <strong>Chart11<br>
+                 The replication of the chart above</strong>
+            </p> 
+            <p> 
+                I replicated the original chart in Vega-Lite. I approximated the data to match the visual structure, colors and axes. (I translated Japanese words into Englsih.)
+            </p>
+        </div>
+        <figure id="Location7"></figure>
+      
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart8<br>
+                 Improved version</strong>
+            </p> 
+            <p> 
+             I corrected the truncated axis, restored a full 0-100% scale, clarified labels and reordered categories to avoid misleading visual emphasis.
+            </p>
+        </div>
+        <figure id="Location8"></figure>
+      <p>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1otV3OxNFj0UaAHLzYeAgbRrwelTm9rBv?usp=sharing">here</a>
+        </p>
+    </section>
 
 
 
@@ -353,7 +391,7 @@
                 The data sauce of this chart is World Bank
             </p>
         </div>
-        <figure id="Location13"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location14"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -381,7 +419,7 @@
         let figure_10_spec = "CC5_Scraping_manufacturing_China_USA_Japan.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_11_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_12_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_13_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_14_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
 
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1

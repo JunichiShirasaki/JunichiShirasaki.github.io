@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=1000",
+    "format": {"property": "[1]"}
+  },
+  "transform": [
+    {"calculate": "toNumber(datum.date)", "as": "year"},
+    {"filter": "datum.value != null && datum.year >= 1970"},
+    {
+      "calculate": "datum.country.id == 'JPN' ? 'Japan' : datum.country.id == 'GBR' ? 'United Kingdom' : datum.country.value",
+      "as": "country_name"
+    }
+  ],
+  "width": 500,
+  "height": 350,
+  "mark": "line",
+  "title": {
+    "text": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)",
+    "subtitle": "Source: World Bank"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "axis": {"title": "Year", "grid": true, "format": "d"}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "t CO₂e per capita"}
+    },
+    "color": {
+      "field": "country_name",
+      "type": "nominal",
+      "legend": {"title": "Country", "orient": "top-right"}
+    }
+  },
+  "config": {}
+}

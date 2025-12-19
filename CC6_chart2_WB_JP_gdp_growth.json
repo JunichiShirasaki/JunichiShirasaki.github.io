@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Japan: GDP growth (annual %)",
+    "subtitle": "Source: World Bank",
+    "anchor": "start",
+    "fontSize": 12,
+    "subtitleFontSize": 11
+  },
+  "width": 260,
+  "height": 160,
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_clean_WB_JP_gdp_growth.json",
+    "format": {"type": "json"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d", "tickCount": 6}
+    },
+    "y": {
+      "field": "gdp_growth",
+      "type": "quantitative",
+      "axis": {
+        "title": "Annual GDP growth (%)",
+        "format": ".1f",
+        "tickCount": 6
+      }
+    },
+    "tooltip": [
+      {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+      {
+        "field": "gdp_growth",
+        "type": "quantitative",
+        "title": "GDP growth (annual %)",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {}
+}

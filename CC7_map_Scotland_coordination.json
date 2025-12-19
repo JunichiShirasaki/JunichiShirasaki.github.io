@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map of world heritage sites in Scotland",
+  "title": "World heritage sites in Scotland (data retrieved in 2025)",
+  "width": 300,
+  "height": 400,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/RADataHub/refs/heads/main/MappingWorkshop/geo_data/LAD_SCT_2025_05.topojson",
+        "format": {"type": "topojson", "feature": "object_name"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightblue",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_Scotland_World_Heritage_Location.csv"
+      },
+      "transform": [{"filter": "datum.site !== 'Antonine Wall'"}],
+      "mark": {"type": "circle", "size": 40, "color": "#5100d3"},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "site", "type": "nominal", "title": "Site"},
+          {
+            "field": "year_inscribed",
+            "type": "quantitative",
+            "title": "Year inscribed"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_Scotland_World_Heritage_Location.csv"
+      },
+      "transform": [{"filter": "datum.site === 'Antonine Wall'"}],
+      "mark": {"type": "circle", "size": 90, "color": "red"},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "site", "type": "nominal", "title": "Site"},
+          {
+            "field": "year_inscribed",
+            "type": "quantitative",
+            "title": "Year inscribed"
+          },
+          {"field": "note", "type": "nominal", "title": "Note"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"category": "Antonine Wall"},
+          {"category": "Other World Heritage Sites"}
+        ]
+      },
+      "mark": {"type": "point", "filled": true, "opacity": 0},
+      "encoding": {
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Antonine Wall", "Other World Heritage Sites"],
+            "range": ["red", "#5100d3"]
+          },
+          "legend": {
+            "orient": "right",
+            "title": null,
+            "symbolType": "circle",
+            "symbolSize": 120,
+            "symbolStrokeWidth": 0,
+            "labelLimit": 1000,
+            "labelExpr": "datum.label === 'Antonine Wall' ? 'Antonine Wall\\n(linear site; representative point)' : 'Other World Heritage Sites'"
+          }
+        }
+      }
+    }
+  ],
+  "config": {}
+}

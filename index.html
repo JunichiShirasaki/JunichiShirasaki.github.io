@@ -300,8 +300,9 @@
             </p>
             
             <p>
-            Colab Notebook:<a href="https://colab.research.google.com/drive/1otV3OxNFj0UaAHLzYeAgbRrwelTm9rBv?usp=sharing">here</a>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1otV3OxNFj0UaAHLzYeAgbRrwelTm9rBv?usp=sharing">here</a>,
             </p>
+
             
 <div id="charts-grid">
   <div id="chart11"></div>
@@ -311,6 +312,10 @@
   <div id="chart15"></div>
   <div id="chart16"></div>
 </div>
+
+            <p> 
+                Data Source from the World Bank: <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP (current US$)</a>, <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG">GDP growth (annual %)</a>,  <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">Inflation, consumer prices (annual %)</a>, <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy at birth, total (years)</a>, <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">Population, total</a>, <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS">Unemployment, total (% of total labor force)</a>,
+            </p>
 
  </section>
 
@@ -325,13 +330,13 @@
             </p>
             <p class="chart-title"> 
                 <strong>Chart9<br>
-                 The chart using API: The difference in the trends of carbon dioxide emissions in Japan and the United Kingdom</strong>
+                 Chart of Scotland: The difference in the trends of carbon dioxide emissions in Japan and the United Kingdom</strong>
             </p> 
             <p> 
                 This chart shows the trends in per capita carbon dioxide emissions in Japan and the United Kingdom since 1970.
             </p>
         </div>
-        <figure id="Location9"></figure>
+        <figure id="Location17"></figure>
         <p> 
                 Data Source: <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">The World Bank</a><br>
                 Base URL for API of the World Bank: https://api.worldbank.org/v2/ <br>
@@ -344,13 +349,13 @@
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Chart10<br>
-                 The chart using scraping: Top three countries by manufacturing output</strong>
+                 Chart of Wales: Top three countries by manufacturing output</strong>
             </p> 
             <p> 
              I scraped a Wikipedia table, cleaned the data into tidy long format and visulaised top manufacturing output (China, US, Japan).
             </p>
         </div>
-        <figure id="Location10"></figure>
+        <figure id="Location18"></figure>
         <p> 
             Data Source:<a href="https://en.wikipedia.org/wiki/Manufacturing"> Wikipedia: Manufacturing</a> 
             <!-- URL: Wikipedia -->
@@ -376,7 +381,7 @@
                 Data source: Office for national statistics
             </p>
         </div>
-        <figure id="Location21"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location32"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -402,7 +407,7 @@
                 The source of this chart is shiller 2025.
             </p>
         </div>
-        <figure id="Location18"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location29"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -416,7 +421,7 @@
 
             </p>
         </div>
-        <figure id="Location19"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location30"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -429,7 +434,7 @@
                 The data sauce of this chart is World Bank
             </p>
         </div>
-        <figure id="Location21"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location32"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
 
     </section>
@@ -456,9 +461,9 @@
         let figure_9_spec = "CC5_API_worldbank_CO2emission_Japan_UK.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_10_spec = "CC5_Scraping_manufacturing_China_USA_Japan.json"; // We're storing the URL of the graph we want to display in a variable
 
-        let figure_18_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_19_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_21_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_29_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_30_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_32_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
 
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
@@ -482,11 +487,11 @@
         vegaEmbed('#Location10', figure_10_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         
-        vegaEmbed('#Location21', figure_21_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location32', figure_32_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
-        vegaEmbed('#Location18', figure_18_spec)
+        vegaEmbed('#Location29', figure_29_spec)
         
-        vegaEmbed('#Location19', figure_19_spec)
+        vegaEmbed('#Location30', figure_30_spec)
 
 
         let chart_files=[

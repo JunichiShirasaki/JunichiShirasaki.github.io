@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Welsh speakers by local authority in Wales (Census 2021)",
+  "width": 300,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/RADataHub/refs/heads/main/MappingWorkshop/geo_data/LAD_WLS_2025_05.topojson",
+    "format": {"type": "topojson", "feature": "object_name"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.LAD25CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_cleaned_wales_welsh_speakers_la_2021.csv"
+        },
+        "key": "lad_code",
+        "fields": ["lad_name", "welsh_speakers_pct"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "projection": {"type": "mercator"},
+  "encoding": {
+    "color": {
+      "field": "welsh_speakers_pct",
+      "type": "quantitative",
+      "scale": {"scheme": "oranges"},
+      "legend": {"title": "Welsh speakers (%)", "format": ".1f"}
+    },
+    "tooltip": [
+      {"field": "properties.LAD25NM", "title": "Local Authority"},
+      {
+        "field": "welsh_speakers_pct",
+        "title": "Welsh speakers (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {}
+}

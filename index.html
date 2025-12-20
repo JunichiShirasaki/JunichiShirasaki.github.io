@@ -403,6 +403,45 @@
     <section>
         <div class="chart-description">
             <h2 class="cc-title">
+                CC9. Two interactive charts<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to produce two interactive charts.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart15<br>
+                 Slider: Changing the starting year of the chart</strong>
+            </p> 
+            <p> 
+            Using slider, I created this chart below. This chart shows the change in the renewable energy consumption trends in Japan.
+            </p>
+        </div>
+        <figure id="Location21"></figure>
+        <p> 
+                Data Source: <a href="https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS">The World Bank</a><br>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart16<br>
+                 Dropdown: Choosing one country from the dropbox</strong>
+            </p> 
+            <p> 
+             Using dropbox, I created this chart below. This chart shows the change in the research and development expenditure trends in Japan, Uk and US.
+            </p>
+        </div>
+        <figure id="Location22"></figure>
+        
+        <p>
+            Data Source:<a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">The World Bank</a>
+        </p>
+    </section>
+
+
+
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
                 CC2. Building. Create your own visualisations<br> 
                 yearly change in the number of homicide</h2>
             <p> 
@@ -497,6 +536,8 @@
         let figure_18_spec = "CC7_map_Wales_Choropleths.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_19_spec = "CC8_chart1_sugar_prices.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_20_spec = "CC8_chart2_sugar_prices_region.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_21_spec = "CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_22_spec = "CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"; // We're storing the URL of the graph we want to display in a variable
 
         let figure_29_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_30_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
@@ -530,7 +571,12 @@
         vegaEmbed('#Location19', figure_19_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location20', figure_20_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-       
+        
+        vegaEmbed('#Location21', figure_21_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        
+        vegaEmbed('#Location22', figure_22_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+
+
         vegaEmbed('#Location32', figure_32_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location29', figure_29_spec)

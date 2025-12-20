@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Japan: Renewable energy consumption (% of total final energy)",
+    "subtitle": "Data Source: World Bank"
+  },
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/JP/indicator/EG.FEC.RNEW.ZS?format=json&per_page=2000",
+    "format": {"type": "json", "property": "1"}
+  },
+  "params": [
+    {
+      "name": "startYear",
+      "value": 1990,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2021,
+        "step": 1,
+        "name": "Start year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.value != null"},
+    {"calculate": "toNumber(datum.date)", "as": "year"},
+    {"filter": "datum.year >= startYear"}
+  ],
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": "Year",
+      "axis": {"format": "d"},
+      "scale": {"nice": false, "padding": 0}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Renewables (% of total final energy)",
+      "scale": {"zero": true}
+    },
+    "tooltip": [
+      {"field": "year", "type": "quantitative", "title": "Year"},
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Renewables (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {}
+}

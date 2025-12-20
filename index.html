@@ -374,7 +374,7 @@
                  Chart of sygar price</strong>
             </p> 
             <p> 
-            This coordinats map visualises the locations of World Heritage Sites in Scotland using longitude and latitude data. The Antonine Wall is treated separately and represented by a single reference point because it is a linear site rather than a point-based location.
+            Using the dataset of AutoCPI, I created this chart below. In colab notobook with python, I accessed, extracted and organized the dataset. In the creation of this chart, I used altair and saved the chart in the form of json.
             </p>
         </div>
         <figure id="Location19"></figure>
@@ -385,20 +385,16 @@
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Chart14<br>
-                 Chart of Wales: Choropleth map</strong>
+                 Chart of sugar prices by region</strong>
             </p> 
             <p> 
-             I created a choropleth map of the percentage of Welsh speakers by local authority in Wales (Census 2021).<br>
-             I cleaned and arranged the census data, using Python in Google Colab. Then, the data were joined to local authority boundaries in Vega-Lite.
+             In this chart, we can compare the prices of sugar by region.
             </p>
         </div>
         <figure id="Location20"></figure>
-        <p> 
-            Data Source:<a href="https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1"> Office for National Statistics</a> 
-            <!-- URL: Office for National Statistics -->
-        </p>
+        
         <p>
-            Colab Notebook:<a href="https://colab.research.google.com/drive/1zbBLfZU5Y_HCtZG4zYzXFB7ohTKwNx7E?usp=sharing">here</a>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1CXeiiHjGUi7pGqDRfyuxMrTIP3Gp_pOy?usp=sharing">here</a>
         </p>
     </section>
 
@@ -500,6 +496,7 @@
         let figure_17_spec = "CC7_map_Scotland_coordination.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_18_spec = "CC7_map_Wales_Choropleths.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_19_spec = "CC8_chart1_sugar_prices.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_20_spec = "CC8_chart2_sugar_prices_region.json"; // We're storing the URL of the graph we want to display in a variable
 
         let figure_29_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_30_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
@@ -532,7 +529,8 @@
         
         vegaEmbed('#Location19', figure_19_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
-
+        vegaEmbed('#Location20', figure_20_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+       
         vegaEmbed('#Location32', figure_32_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location29', figure_29_spec)

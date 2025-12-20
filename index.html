@@ -196,7 +196,7 @@
 
             <p> 
                 The task in this code challenge is to replicate a chart used by some organizations and to modify it into more appropriate manner.<br>
-                This chart in the iamge below was used by Fukushima TV to compare attitudes toward blaming individuals for COVID-19 infection in different countries. 
+                This chart in the image below was used by Fukushima TV to compare attitudes toward blaming individuals for COVID-19 infection in different countries. 
             </p>
 
              <!-- CC4: Original chart image -->
@@ -371,7 +371,7 @@
             </p>
             <p class="chart-title"> 
                 <strong>Chart13<br>
-                 Chart of Scotland: Coordinats map</strong>
+                 Chart of sygar price</strong>
             </p> 
             <p> 
             This coordinats map visualises the locations of World Heritage Sites in Scotland using longitude and latitude data. The Antonine Wall is treated separately and represented by a single reference point because it is a linear site rather than a point-based location.
@@ -379,7 +379,7 @@
         </div>
         <figure id="Location19"></figure>
         <p> 
-                Data Source: <a href="https://worldheritageuk.org/world-heritage-sites-uk-list/scotland/">World Heritage UK</a>,<a href="https://whc.unesco.org/en/list/">UNESCO</a><br>
+                Colab Notebook: <a href="https://colab.research.google.com/drive/1mOgoqaXpgngnDEozHn7dql4h_R0-GTYd?usp=sharing">here</a><br>
         </p>
 
         <div class="chart-description">
@@ -499,6 +499,8 @@
         let figure_10_spec = "CC5_Scraping_manufacturing_China_USA_Japan.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_17_spec = "CC7_map_Scotland_coordination.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_18_spec = "CC7_map_Wales_Choropleths.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_19_spec = "CC8_chart1_sugar_prices.json"; // We're storing the URL of the graph we want to display in a variable
+
         let figure_29_spec = "wk3_pe_ratio_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_30_spec = "wk3_US_CPI_chart.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_32_spec = "Wk4_1_Fertility_rate_Korea_Source_WorldBank.json"; // We're storing the URL of the graph we want to display in a variable
@@ -528,6 +530,9 @@
  
         vegaEmbed('#Location18', figure_18_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         
+        vegaEmbed('#Location19', figure_19_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+
+
         vegaEmbed('#Location32', figure_32_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         vegaEmbed('#Location29', figure_29_spec)

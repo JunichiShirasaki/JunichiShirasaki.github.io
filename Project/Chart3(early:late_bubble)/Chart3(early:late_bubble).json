@@ -1,0 +1,233 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Energy Structure and Inflation during the 2021 - 2023 Energy Shock (OECD)",
+    "subtitle": [
+      "Use sliders to zoom the visible range (filter-based zoom).",
+      "Use checkboxes to show/hide Early and Late groups. Use sliders to filter renewables range.",
+      "Dashed lines and median notes are OECD-wide medians (fixed; not affected by filters).",
+      "x: Energy import dependence (avg 2015 - 2021). y: CPI inflation (avg 2021 - 2023). Bubble size and fill: renewables (avg 2015 - 2021)."
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/base_data/chart3_structure_inflation.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "xmin",
+      "value": -700,
+      "bind": {
+        "input": "range",
+        "min": -700,
+        "max": 200,
+        "step": 10,
+        "name": "x(Imports) min"
+      }
+    },
+    {
+      "name": "xmax",
+      "value": 200,
+      "bind": {
+        "input": "range",
+        "min": -700,
+        "max": 200,
+        "step": 10,
+        "name": "x(Imports) max"
+      }
+    },
+    {
+      "name": "ymin",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "name": "y(Inflation) min"
+      }
+    },
+    {
+      "name": "ymax",
+      "value": 60,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "name": "y(Inflation)  max"
+      }
+    },
+    {
+      "name": "rmin",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "name": "share min"
+      }
+    },
+    {
+      "name": "rmax",
+      "value": 80,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "name": "share max"
+      }
+    },
+    {
+      "name": "showEarly",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show Early"}
+    },
+    {
+      "name": "showLate",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show Late"}
+    }
+  ],
+  "transform": [
+    {"calculate": "toNumber(datum.imports_2015_2021)", "as": "imports_num"},
+    {"calculate": "toNumber(datum.inflation_2021_2023)", "as": "inflation_num"},
+    {"calculate": "toNumber(datum.renew_2015_2021)", "as": "renew_num"},
+    {
+      "filter": "isValid(datum.imports_num) && isValid(datum.inflation_num) && isValid(datum.renew_num)"
+    }
+  ],
+  "width": 520,
+  "height": 420,
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.imports_num >= xmin && datum.imports_num <= xmax && datum.inflation_num >= ymin && datum.inflation_num <= ymax && datum.renew_num >= rmin && datum.renew_num <= rmax"
+        },
+        {
+          "filter": "(showEarly && datum.adopter == 'Early') || (showLate && datum.adopter == 'Late')"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "strokeWidth": 2.2,
+        "fillOpacity": 0.8
+      },
+      "encoding": {
+        "x": {
+          "field": "imports_num",
+          "type": "quantitative",
+          "title": "Energy imports (% of energy use) — avg 2015 - 2021"
+        },
+        "y": {
+          "field": "inflation_num",
+          "type": "quantitative",
+          "title": "Inflation (CPI, %) — avg 2021 - 2023"
+        },
+        "size": {
+          "field": "renew_num",
+          "type": "quantitative",
+          "scale": {"domain": [0, 50], "range": [40, 400], "clamp": true},
+          "legend": {"values": [0, 10, 20, 30, 40, 50]}
+        },
+        "stroke": {
+          "field": "adopter",
+          "type": "nominal",
+          "title": "Renewable adoption group",
+          "scale": {
+            "domain": ["Early", "Late"],
+            "range": ["#4C78A8", "#F58518"]
+          },
+          "legend": {"symbolFillColor": "transparent", "symbolStrokeWidth": 2.2}
+        },
+        "fill": {
+          "field": "renew_num",
+          "type": "quantitative",
+          "scale": {"domain": [0, 50], "scheme": "greens", "clamp": true},
+          "legend": {
+            "title": ["Renewable share", "(avg 2015 - 2021)"],
+            "values": [0, 10, 20, 30, 40, 50]
+          }
+        },
+        "tooltip": [
+          {"field": "country_name", "type": "nominal", "title": "Country"},
+          {"field": "adopter", "type": "nominal", "title": "Group"},
+          {
+            "field": "renew_num",
+            "type": "quantitative",
+            "title": "Renewables (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "imports_num",
+            "type": "quantitative",
+            "title": "Energy imports (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "inflation_num",
+            "type": "quantitative",
+            "title": "Inflation (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.6},
+      "encoding": {
+        "x": {
+          "aggregate": "median",
+          "field": "imports_num",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.6},
+      "encoding": {
+        "y": {
+          "aggregate": "median",
+          "field": "inflation_num",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "median", "field": "imports_num", "as": "med_imports"},
+            {"op": "median", "field": "inflation_num", "as": "med_inflation"}
+          ]
+        },
+        {
+          "calculate": "'OECD median (fixed)  x=' + format(datum.med_imports, '.2f') + '   y=' + format(datum.med_inflation, '.2f')",
+          "as": "median_note"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 8,
+        "dy": 8,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "median_note"},
+        "x": {"value": 0},
+        "y": {"value": 0}
+      }
+    }
+  ],
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 13},
+    "title": {"fontSize": 16, "subtitleFontSize": 12},
+    "view": {"stroke": null}
+  }
+}

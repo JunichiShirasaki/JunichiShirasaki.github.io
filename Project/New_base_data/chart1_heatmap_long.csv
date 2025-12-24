@@ -1,0 +1,229 @@
+iso3,country_name,indicator,z_score
+AUS,Australia,gdp_pc_ppp,-0.09121596844466395
+AUT,Austria,gdp_pc_ppp,-0.3269938499633485
+BEL,Belgium,gdp_pc_ppp,-0.2942446935047926
+CAN,Canada,gdp_pc_ppp,0.09438850908152695
+CHE,Switzerland,gdp_pc_ppp,-0.2969302866453587
+CHL,Chile,gdp_pc_ppp,-0.33486763393741537
+COL,Colombia,gdp_pc_ppp,-0.251316476984248
+CRI,Costa Rica,gdp_pc_ppp,-0.44898711966716714
+CZE,Czechia,gdp_pc_ppp,-0.34767549111701235
+DEU,Germany,gdp_pc_ppp,0.925255457183144
+DNK,Denmark,gdp_pc_ppp,-0.3758361249929718
+ESP,Spain,gdp_pc_ppp,0.10507540227683969
+EST,Estonia,gdp_pc_ppp,-0.4651638530077659
+FIN,Finland,gdp_pc_ppp,-0.39547330836445177
+FRA,France,gdp_pc_ppp,0.4835788413251234
+GBR,United Kingdom,gdp_pc_ppp,0.4566424133697451
+GRC,Greece,gdp_pc_ppp,-0.38349975184177193
+HUN,Hungary,gdp_pc_ppp,-0.3871939373599076
+IRL,Ireland,gdp_pc_ppp,-0.3616746494936728
+ISL,Iceland,gdp_pc_ppp,-0.4734345542060233
+ISR,Israel,gdp_pc_ppp,-0.375954774885155
+ITA,Italy,gdp_pc_ppp,0.3289529929838689
+JPN,Japan,gdp_pc_ppp,1.0764344142176805
+KOR,"Korea, Rep.",gdp_pc_ppp,0.19583420096920529
+LTU,Lithuania,gdp_pc_ppp,-0.44877857279379313
+LUX,Luxembourg,gdp_pc_ppp,-0.45774571901103955
+LVA,Latvia,gdp_pc_ppp,-0.4617384592139796
+MEX,Mexico,gdp_pc_ppp,0.2623716960450756
+NLD,Netherlands,gdp_pc_ppp,-0.16834442342087522
+NOR,Norway,gdp_pc_ppp,-0.35283553605655177
+NZL,New Zealand,gdp_pc_ppp,-0.41800584868134566
+POL,Poland,gdp_pc_ppp,-0.11459121760735064
+PRT,Portugal,gdp_pc_ppp,-0.3711487663473006
+SVK,Slovak Republic,gdp_pc_ppp,-0.4263711454668666
+SVN,Slovenia,gdp_pc_ppp,-0.4556684001201561
+SWE,Sweden,gdp_pc_ppp,-0.3113593373947163
+TUR,Turkiye,gdp_pc_ppp,0.13635000710905978
+USA,United States,gdp_pc_ppp,5.532165965968434
+AUS,Australia,life_exp,0.7898451329225894
+AUT,Austria,life_exp,0.41927515167129525
+BEL,Belgium,life_exp,0.3780600029903555
+CAN,Canada,life_exp,0.5310139992062876
+CHE,Switzerland,life_exp,1.1437458762629353
+CHL,Chile,life_exp,-0.051427491246443274
+COL,Colombia,life_exp,-1.5317858744308983
+CRI,Costa Rica,life_exp,-0.1281078174212355
+CZE,Czechia,life_exp,-0.5737351638814868
+DEU,Germany,life_exp,0.1749151146029654
+DNK,Denmark,life_exp,0.19396567221549277
+ESP,Spain,life_exp,1.0684595380057402
+EST,Estonia,life_exp,-0.9212246618714436
+FIN,Finland,life_exp,0.433929426757849
+FRA,France,life_exp,0.7880133485367715
+GBR,United Kingdom,life_exp,0.2638189379843281
+GRC,Greece,life_exp,0.34985052344873874
+HUN,Hungary,life_exp,-1.70083209647625
+IRL,Ireland,life_exp,0.5775413226061098
+ISL,Iceland,life_exp,0.81695554183271
+ISR,Israel,life_exp,0.7612692965038037
+ITA,Italy,life_exp,0.9836479209423029
+JPN,Japan,life_exp,1.3492354486641585
+KOR,"Korea, Rep.",life_exp,0.7735422518887942
+LTU,Lithuania,life_exp,-1.9559996614209054
+LUX,Luxembourg,life_exp,0.715474686858314
+LVA,Latvia,life_exp,-2.1494360925634606
+MEX,Mexico,life_exp,-2.296786660343173
+NLD,Netherlands,life_exp,0.47129782822856586
+NOR,Norway,life_exp,0.7929591663784851
+NZL,New Zealand,life_exp,0.4815741386330191
+POL,Poland,life_exp,-1.045236464791437
+PRT,Portugal,life_exp,0.3148634416795905
+SVK,Slovak Republic,life_exp,-1.2507626728803904
+SVN,Slovenia,life_exp,0.25587998445618526
+SWE,Sweden,life_exp,0.759254333679404
+TUR,Turkiye,life_exp,-1.2856728197053462
+USA,United States,life_exp,-0.6973806099243061
+AUS,Australia,gov_cons_gdp,0.2628288567385052
+AUT,Austria,gov_cons_gdp,0.21508831787694277
+BEL,Belgium,gov_cons_gdp,1.1887064820991704
+CAN,Canada,gov_cons_gdp,0.5246074550760661
+CHE,Switzerland,gov_cons_gdp,-1.9919350548338541
+CHL,Chile,gov_cons_gdp,-1.1576738364316095
+COL,Colombia,gov_cons_gdp,-1.0106180274149217
+CRI,Costa Rica,gov_cons_gdp,-0.6047993183363641
+CZE,Czechia,gov_cons_gdp,0.017154919757633953
+DEU,Germany,gov_cons_gdp,0.184560950584349
+DNK,Denmark,gov_cons_gdp,1.5760638529215358
+ESP,Spain,gov_cons_gdp,-0.0022711765847668783
+EST,Estonia,gov_cons_gdp,0.05678230949693667
+FIN,Finland,gov_cons_gdp,1.2635732468569336
+FRA,France,gov_cons_gdp,1.2584432272114396
+GBR,United Kingdom,gov_cons_gdp,0.007747262451031735
+GRC,Greece,gov_cons_gdp,0.3895720038455002
+HUN,Hungary,gov_cons_gdp,0.27638208270484155
+IRL,Ireland,gov_cons_gdp,-1.8330328377815461
+ISL,Iceland,gov_cons_gdp,1.2412351008957545
+ISR,Israel,gov_cons_gdp,0.8704445811987456
+ITA,Italy,gov_cons_gdp,-0.009392689052296963
+JPN,Japan,gov_cons_gdp,0.21383067385799207
+KOR,"Korea, Rep.",gov_cons_gdp,-1.057021273677761
+LTU,Lithuania,gov_cons_gdp,-0.5759041321714633
+LUX,Luxembourg,gov_cons_gdp,-0.6631641499263298
+LVA,Latvia,gov_cons_gdp,-0.0010339746539926092
+MEX,Mexico,gov_cons_gdp,-1.9987625962095714
+NLD,Netherlands,gov_cons_gdp,1.4354504587686419
+NOR,Norway,gov_cons_gdp,1.2971589631370828
+NZL,New Zealand,gov_cons_gdp,-0.14180640623025428
+POL,Poland,gov_cons_gdp,-0.3032300827745428
+PRT,Portugal,gov_cons_gdp,-0.40523580204342974
+SVK,Slovak Republic,gov_cons_gdp,0.001493228223128985
+SVN,Slovenia,gov_cons_gdp,-0.025736546944671593
+SWE,Sweden,gov_cons_gdp,1.9746409463720984
+TUR,Turkiye,gov_cons_gdp,-1.196711349200431
+USA,United States,gov_cons_gdp,-1.2774356658065154
+AUS,Australia,emp_ratio,0.7476498643790217
+AUT,Austria,emp_ratio,0.0528464468512532
+BEL,Belgium,emp_ratio,-1.1674933274194528
+CAN,Canada,emp_ratio,0.7113486786037592
+CHE,Switzerland,emp_ratio,1.3013388132592882
+CHL,Chile,emp_ratio,0.187122487896725
+COL,Colombia,emp_ratio,0.42196176101504224
+CRI,Costa Rica,emp_ratio,-0.12428161014899665
+CZE,Czechia,emp_ratio,0.14931940447054828
+DEU,Germany,emp_ratio,0.20738212854946914
+DNK,Denmark,emp_ratio,0.2060400072443964
+ESP,Spain,emp_ratio,-1.484713284453816
+EST,Estonia,emp_ratio,0.3421374986324653
+FIN,Finland,emp_ratio,-0.4799118007237351
+FRA,France,emp_ratio,-1.1197202000127466
+GBR,United Kingdom,emp_ratio,0.40521719997081806
+GRC,Greece,emp_ratio,-2.701761666000181
+HUN,Hungary,emp_ratio,-0.33882928734540146
+IRL,Ireland,emp_ratio,0.0870066295922368
+ISL,Iceland,emp_ratio,2.7003085421811583
+ISR,Israel,emp_ratio,0.8785706021618139
+ITA,Italy,emp_ratio,-2.1161494032207173
+JPN,Japan,emp_ratio,0.3001163196760651
+KOR,"Korea, Rep.",emp_ratio,0.539621062092963
+LTU,Lithuania,emp_ratio,-0.12230038346055808
+LUX,Luxembourg,emp_ratio,-0.19100421217254362
+LVA,Latvia,emp_ratio,-0.23232237520723917
+MEX,Mexico,emp_ratio,0.19865834006650415
+NLD,Netherlands,emp_ratio,0.9502143156372902
+NOR,Norway,emp_ratio,0.8691118424879793
+NZL,New Zealand,emp_ratio,1.5059164464751635
+POL,Poland,emp_ratio,-0.4547310486190628
+PRT,Portugal,emp_ratio,-0.5950466355373542
+SVK,Slovak Republic,emp_ratio,-0.3669818794827305
+SVN,Slovenia,emp_ratio,-0.45575361723245045
+SWE,Sweden,emp_ratio,0.45052977165156016
+TUR,Turkiye,emp_ratio,-1.6918792944723284
+USA,United States,emp_ratio,0.4304618626138269
+AUS,Australia,pop_65,-0.34237989594013973
+AUT,Austria,pop_65,0.39077465439460185
+BEL,Belgium,pop_65,0.37585221143616976
+CAN,Canada,pop_65,-0.0358583367907886
+CHE,Switzerland,pop_65,0.2925874616872188
+CHL,Chile,pop_65,-1.1556589446161538
+COL,Colombia,pop_65,-2.0915138909709987
+CRI,Costa Rica,pop_65,-1.6932469767132026
+CZE,Czechia,pop_65,0.4802654817328639
+DEU,Germany,pop_65,0.9901644935434175
+DNK,Denmark,pop_65,0.5129949974739558
+ESP,Spain,pop_65,0.4634822068097483
+EST,Estonia,pop_65,0.5640054617224787
+FIN,Finland,pop_65,0.9520572807041473
+FRA,France,pop_65,0.615547372354515
+GBR,United Kingdom,pop_65,0.264397131958198
+GRC,Greece,pop_65,1.0622853489237167
+HUN,Hungary,pop_65,0.4237840890881918
+IRL,Ireland,pop_65,-0.7327271137727988
+ISL,Iceland,pop_65,-0.6572871619047167
+ISR,Israel,pop_65,-1.2295976213025444
+ITA,Italy,pop_65,1.2720026771378732
+JPN,Japan,pop_65,2.471160327735798
+KOR,"Korea, Rep.",pop_65,-0.6723787395648138
+LTU,Lithuania,pop_65,0.5655571100372566
+LUX,Luxembourg,pop_65,-0.5874276614882464
+LVA,Latvia,pop_65,0.6904063865902075
+MEX,Mexico,pop_65,-2.242950756810134
+NLD,Netherlands,pop_65,0.33720819461089957
+NOR,Norway,pop_65,-0.025234376266661612
+NZL,New Zealand,pop_65,-0.45648657038267637
+POL,Poland,pop_65,-0.10302159491642224
+PRT,Portugal,pop_65,1.0285967237552514
+SVK,Slovak Republic,pop_65,-0.38869304472221433
+SVN,Slovenia,pop_65,0.46162493643659946
+SWE,Sweden,pop_65,0.6530149535119452
+TUR,Turkiye,pop_65,-2.01187697722365
+USA,United States,pop_65,-0.44142983825889404
+AUS,Australia,manuf_va_gdp,-1.4559790877401346
+AUT,Austria,manuf_va_gdp,0.5179173234914026
+BEL,Belgium,manuf_va_gdp,-0.32452213325349544
+CAN,Canada,manuf_va_gdp,-0.7759020572647404
+CHE,Switzerland,manuf_va_gdp,0.5436048145188541
+CHL,Chile,manuf_va_gdp,-0.8070287040882596
+COL,Colombia,manuf_va_gdp,-0.45492515017820445
+CRI,Costa Rica,manuf_va_gdp,-0.4300771854328532
+CZE,Czechia,manuf_va_gdp,1.4819968372169945
+DEU,Germany,manuf_va_gdp,0.959630026519195
+DNK,Denmark,manuf_va_gdp,-0.22833289175519278
+ESP,Spain,manuf_va_gdp,-0.5781128468216895
+EST,Estonia,manuf_va_gdp,-0.1652379370689839
+FIN,Finland,manuf_va_gdp,0.09897983455065952
+FRA,France,manuf_va_gdp,-0.723547151397482
+GBR,United Kingdom,manuf_va_gdp,-0.8847262371583762
+GRC,Greece,manuf_va_gdp,-1.0587621123010043
+HUN,Hungary,manuf_va_gdp,0.7840194942658963
+IRL,Ireland,manuf_va_gdp,3.158752088407624
+ISL,Iceland,manuf_va_gdp,-0.8636778726840317
+ISR,Israel,manuf_va_gdp,-0.4070354828224484
+ITA,Italy,manuf_va_gdp,0.06594189481515815
+JPN,Japan,manuf_va_gdp,1.0369981073908883
+KOR,"Korea, Rep.",manuf_va_gdp,2.243993233842886
+LTU,Lithuania,manuf_va_gdp,0.3988182359785416
+LUX,Luxembourg,manuf_va_gdp,-1.5483498551202377
+LVA,Latvia,manuf_va_gdp,-0.5897753588522645
+MEX,Mexico,manuf_va_gdp,0.9655016177984049
+NLD,Netherlands,manuf_va_gdp,-0.6638761026215566
+NOR,Norway,manuf_va_gdp,-1.3293381800794006
+NZL,New Zealand,manuf_va_gdp,-0.6942454603463429
+POL,Poland,manuf_va_gdp,0.4906870403182034
+PRT,Portugal,manuf_va_gdp,-0.3528816283186684
+SVK,Slovak Republic,manuf_va_gdp,0.6454459786842967
+SVN,Slovenia,manuf_va_gdp,1.030323657144409
+SWE,Sweden,manuf_va_gdp,-0.14713879575712566
+TUR,Turkiye,manuf_va_gdp,0.5714502016826033
+USA,United States,manuf_va_gdp,-0.510588155563506

@@ -1,0 +1,39 @@
+iso3,country_name,cluster_id
+AUT,Austria,0
+BEL,Belgium,0
+DEU,Germany,0
+ESP,Spain,0
+FIN,Finland,0
+FRA,France,0
+GRC,Greece,0
+ITA,Italy,0
+JPN,Japan,0
+PRT,Portugal,0
+SVN,Slovenia,0
+CHL,Chile,1
+COL,Colombia,1
+CRI,Costa Rica,1
+CZE,Czechia,1
+EST,Estonia,1
+HUN,Hungary,1
+IRL,Ireland,1
+KOR,"Korea, Rep.",1
+LTU,Lithuania,1
+LVA,Latvia,1
+MEX,Mexico,1
+POL,Poland,1
+SVK,Slovak Republic,1
+TUR,Turkiye,1
+USA,United States,1
+AUS,Australia,2
+CAN,Canada,2
+CHE,Switzerland,2
+DNK,Denmark,2
+GBR,United Kingdom,2
+ISL,Iceland,2
+ISR,Israel,2
+LUX,Luxembourg,2
+NLD,Netherlands,2
+NOR,Norway,2
+NZL,New Zealand,2
+SWE,Sweden,2

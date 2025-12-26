@@ -1,33 +1,14 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
 
-<!-- Take a look around and make your own copy to adapt for your own use. -->
 
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
 
 <!DOCTYPE html>
 <html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
 
 <head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
 
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+    <link rel="stylesheet" type="text/css" href="index_CSS.css">
+    <title>My Portfolio</title> 
 
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -53,30 +34,19 @@
 </head>
 
 
+
 <body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
+    <h1 class="big" style="margin-bottom: 0px;"> 
         Junichi Shirasaki
     </h1>
     <p style="margin-top: 0px; color: rgb(55, 31, 50)">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
         <a href="/project.html">Project Page</a> | 
         <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
     </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
+    <h3 class="small"> 
         My portfolio of charts  
     </h3>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    <section>
-        <div class="chart-description">
-            <h2>About me</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                I am Junichi, from Japan. I previously worked at the Cabinet Office, where I engaged in policy design. Outside of work, i enjoy skiing. I am now eager to sharpen my data analysis skills to strengthen evidence-based policymaking.
-            </p>
-        </div>
-    </section>
 
     <section>
         <div class="chart-description">
@@ -97,8 +67,8 @@
         </div>
         <figure id="Location1"></figure> 
             <p> 
-                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> 
-                <!-- URL: Economic Observatory -->
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> <br><!-- URL: Economic Observatory -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC1_Chart1_from_Economics_Observatory.json"> here</a>
             </p>
 
          <div class="chart-description">
@@ -112,8 +82,9 @@
             </div>
         <figure id="Location2"></figure> 
             <p> 
-                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> 
-                <!-- URL: Economic Observatory -->
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a><br> <!-- URL: Economic Observatory -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/fig1_reciprocal-tariffs.json"> here</a>
+
             </p>
     </section>
 
@@ -135,6 +106,9 @@
             </p>
         </div>
         <figure id="Location3"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC2_Chart3_Json_Graph_Japan_Nuclear.json"> here</a>
+        </p>
 
         <div class="chart-description">
             <p class="chart-title"> 
@@ -146,9 +120,13 @@
             </p>
         </div>
         <figure id="Location4"></figure>
+         <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC2_Chart4_Json_Graph_China_Renewable.json"> here</a>
+        </p>
+
     </section>
-        
-<section>
+    
+    <section>
         <div class="chart-description">
             <h2 class="cc-title">
                 CC3. Debate. Use a visualisation in policy commentary<br> 
@@ -167,8 +145,8 @@
         </div>
         <figure id="Location5"></figure>
         <p> 
-                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms"> Office for National Statistics</a> 
-                <!-- URL: Office for National Statistics -->
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms"> Office for National Statistics</a> <br><!-- URL: Office for National Statistics -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC3_wk2_Unemployment_rate_UK.json"> here</a>
         </p>
 
         <div class="chart-description">
@@ -182,16 +160,15 @@
         </div>
         <figure id="Location6"></figure>
         <p> 
-                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms"> Office for National Statistics</a> 
-                <!-- URL: Office for National Statistics -->
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms"> Office for National Statistics</a> <br><!-- URL: Office for National Statistics -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC3_Employment_rate_UK.json"> here</a>
         </p>
     </section>
-
-
-<section>
+    
+    <section>
         <div class="chart-description">
             <h2 class="cc-title">
-                CC4. Replication. Re-create, then improve, someone else’s chart.<br> 
+                CC4. Replication. Re-create, then improve, someone else's chart.<br> 
             </h2>
 
             <p> 
@@ -227,6 +204,9 @@
             </p>
         </div>
         <figure id="Location7"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC4_Repulicate.json"> here</a>
+        </p>
       
 
         <div class="chart-description">
@@ -239,6 +219,10 @@
             </p>
         </div>
         <figure id="Location8"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC4_Improved.json"> here</a>
+        </p>
+
       
     </section>
 
@@ -262,6 +246,7 @@
         <figure id="Location9"></figure>
         <p> 
                 Data Source: <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">The World Bank</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC5_API_worldbank_CO2emission_Japan_UK.json"> here</a><br>
                 Base URL for API of the World Bank: https://api.worldbank.org/v2/ <br>
                 The endpoint of the API I used in this chart: country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5<br>
                 To collect data using the World Bank API, I identified the codes of countries for Japan and the United Kingdom, and the indicator code for Carbon Dioxide emissions.<br>
@@ -284,7 +269,8 @@
             <!-- URL: Wikipedia -->
         </p>
         <p>
-            Colab Notebook:<a href="https://colab.research.google.com/drive/1R6uvBuiysMUilEiPfHlBI186tywYBUxI?usp=sharing">here</a>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1R6uvBuiysMUilEiPfHlBI186tywYBUxI?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC5_Scraping_manufacturing_China_USA_Japan.json"> here</a><br>
         </p>
     </section>
 
@@ -296,7 +282,9 @@
 
             <p> 
                 The task in this code challenge is to use a loop to batch download six different series as JSON files and use a loop in my Javascript in order to embed the six charts.<br>
-                Using a loop in Google Colab, I downloaded six World Bank time series as JSON files and stored them on GitHub. These raw files are used as data sources for the dashboard below. 
+                Using a loop in Google Colab, I downloaded six World Bank time series data as JSON files and stored them on GitHub. 
+                These raw files are used as data sources for the dashboard below.
+                In embedding the six charts, I used a loop in my JavaScript. 
             </p>
             
             <p>
@@ -339,6 +327,7 @@
         <figure id="Location17"></figure>
         <p> 
                 Data Source: <a href="https://worldheritageuk.org/world-heritage-sites-uk-list/scotland/">World Heritage UK</a>,<a href="https://whc.unesco.org/en/list/">UNESCO</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC7_map_Scotland_coordination.json"> here</a><br>
         </p>
 
         <div class="chart-description">
@@ -357,7 +346,8 @@
             <!-- URL: Office for National Statistics -->
         </p>
         <p>
-            Colab Notebook:<a href="https://colab.research.google.com/drive/1zbBLfZU5Y_HCtZG4zYzXFB7ohTKwNx7E?usp=sharing">here</a>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1zbBLfZU5Y_HCtZG4zYzXFB7ohTKwNx7E?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC7_map_Wales_Choropleths.json"> here</a><br>
         </p>
     </section>
 
@@ -371,7 +361,7 @@
             </p>
             <p class="chart-title"> 
                 <strong>Chart13<br>
-                 Chart of sygar price</strong>
+                 Chart of sugar price</strong>
             </p> 
             <p> 
             Using the dataset of AutoCPI, I created this chart below. In colab notobook with python, I accessed, extracted and organized the dataset. In the creation of this chart, I used altair and saved the chart in the form of json.
@@ -380,6 +370,7 @@
         <figure id="Location19"></figure>
         <p> 
                 Colab Notebook: <a href="https://colab.research.google.com/drive/1mOgoqaXpgngnDEozHn7dql4h_R0-GTYd?usp=sharing">here</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC8_chart1_sugar_prices.json"> here</a><br>
         </p>
 
         <div class="chart-description">
@@ -388,13 +379,15 @@
                  Chart of sugar prices by region</strong>
             </p> 
             <p> 
-             In this chart, we can compare the prices of sugar by region.
+             I used the dataset of AutoCPI to make this chart. 
+             We can compare the prices of sugar by region.
             </p>
         </div>
         <figure id="Location20"></figure>
         
         <p>
-            Colab Notebook:<a href="https://colab.research.google.com/drive/1CXeiiHjGUi7pGqDRfyuxMrTIP3Gp_pOy?usp=sharing">here</a>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1CXeiiHjGUi7pGqDRfyuxMrTIP3Gp_pOy?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC8_chart2_sugar_prices_region.json"> here</a><br>
         </p>
     </section>
 
@@ -419,6 +412,7 @@
         <figure id="Location21"></figure>
         <p> 
                 Data Source: <a href="https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS">The World Bank</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"> here</a><br>
         </p>
 
         <div class="chart-description">
@@ -433,7 +427,8 @@
         <figure id="Location22"></figure>
         
         <p>
-            Data Source:<a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">The World Bank</a>
+            Data Source:<a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">The World Bank</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"> here</a><br>
         </p>
     </section>
 
@@ -458,15 +453,6 @@
             </p>
         </div>
         <figure id="Location23"></figure>
-        <p> 
-                Data Source from the World Bank: <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD">GDP per capita</a>, <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">CO2 emissions per capita</a><br>
-                
-                Data for GDP per capita and CO2 emissions per capita were retreived from the World Bank API.<br>
-                The datasets were cleaned, merged and filtered to include OECD countries only in the year of 2019.<br>
-                
-                Colab Notebook:<a href="https://colab.research.google.com/drive/1i1ZH6ljIHoLZ1epeFWIXDCwB8I6xE1E4?usp=sharing">here</a>
-
-        </p>
 
         <div class="chart-description">
             <p class="chart-title"> 
@@ -475,7 +461,9 @@
             </p> 
             <p> 
              This chart shows de-trended CO2 emissions per capita.
-             Positive values indicate countries emitting more CO2 than predicted by income, while negative values indicate under-performance.
+             Positive values indicate countries emitting more CO2 than predicted by income, while negative values indicate under-performance.<br>
+             From chart 17 and 18, I can find as follows: <br>
+             Although higher income tends to increase CO2 emissions, larger differences remain across OECD countries after controlling for income, which may suggest the importance of energy policy choices.
             </p>
         </div>
         <figure id="Location24"></figure>
@@ -495,7 +483,7 @@
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-05-liberation-day/visualisation/fig3_uk-exports-us-mode.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_1_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC1_Chart1_from_Economics_Observatory.json"; // /CC1_Chart1_from_Economics_Observatory.json
         let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // /fig1_reciprocal-tariffs.json
         let figure_3_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // CC2_Chart3_Json_Graph_Japan_Nuclear.json
         let figure_4_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart4_Json_Graph_China_Renewable.json"; // CC2_Chart4_Json_Graph_China_Renewable.json

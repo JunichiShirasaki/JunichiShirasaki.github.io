@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Which countries are in each cluster? (k-means, k=3)",
+    "subtitle": [
+      "Top: number of countries per cluster. Bottom: country membership list.",
+      "Cluster A: Ageing, government-intensive economies",
+      "Cluster B: Manufacturing-oriented, low-government economies",
+      "Cluster C: High-income, employment-rich economies"
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/country_cluster_membership_k3.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.cluster_id == 0 ? 'A' : datum.cluster_id == 1 ? 'B' : 'C'",
+      "as": "cluster_abc"
+    }
+  ],
+  "vconcat": [
+    {
+      "transform": [
+        {
+          "aggregate": [{"op": "count", "as": "n_countries"}],
+          "groupby": ["cluster_abc"]
+        }
+      ],
+      "mark": {"type": "bar"},
+      "width": 720,
+      "height": 140,
+      "encoding": {
+        "x": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "title": null,
+          "sort": ["A", "B", "C"],
+          "axis": {"labelAngle": 0, "labelFontSize": 12}
+        },
+        "y": {
+          "field": "n_countries",
+          "type": "quantitative",
+          "title": "Number of countries"
+        },
+        "color": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["A", "B", "C"],
+            "range": ["#4C78A8", "#F58518", "#E45756"]
+          }
+        },
+        "tooltip": [
+          {"field": "cluster_abc", "type": "nominal", "title": "Cluster"},
+          {"field": "n_countries", "type": "quantitative", "title": "Countries"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "row_number", "as": "rank"}],
+          "groupby": ["cluster_abc"],
+          "sort": [{"field": "country_name", "order": "ascending"}]
+        },
+        {"calculate": "ceil(datum.rank / 8)", "as": "col"},
+        {"calculate": "((datum.rank - 1) % 8) + 1", "as": "row"}
+      ],
+      "facet": {
+        "column": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "title": null,
+          "sort": ["A", "B", "C"],
+          "header": {
+            "labelFontSize": 14,
+            "labelFontWeight": "bold",
+            "labelPadding": 8
+          }
+        }
+      },
+      "spec": {
+        "width": 230,
+        "height": 320,
+        "layer": [
+          {
+            "mark": {
+              "type": "rect",
+              "fillOpacity": 0,
+              "stroke": "#080808",
+              "strokeWidth": 1
+            },
+            "encoding": {
+              "x": {"field": "col", "type": "ordinal", "axis": null},
+              "y": {"field": "row", "type": "ordinal", "axis": null}
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "baseline": "middle",
+              "fontSize": 11
+            },
+            "encoding": {
+              "x": {"field": "col", "type": "ordinal", "axis": null},
+              "y": {"field": "row", "type": "ordinal", "axis": null},
+              "text": {"field": "country_name", "type": "nominal"}
+            }
+          }
+        ]
+      },
+      "resolve": {"scale": {"y": "independent"}}
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
+    "title": {"fontSize": 16, "subtitleFontSize": 12}
+  }
+}

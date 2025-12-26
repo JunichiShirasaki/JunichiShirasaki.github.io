@@ -1,0 +1,274 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Within-cluster dispersion across socio-economic indicators",
+    "subtitle": [
+      "Boxplots show the distribution of country-level z-scores within each structural cluster (2015–2019).",
+      "Use checkboxes to show/hide clusters. Points are jittered horizontally to reveal overlap."
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "showA",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster A "}
+    },
+    {
+      "name": "showB",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster B "}
+    },
+    {
+      "name": "showC",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster C "}
+    }
+  ],
+  "transform": [
+    {
+      "filter": "isValid(datum.cluster_id) && isValid(datum.z_score) && isValid(datum.indicator)"
+    },
+    {"calculate": "toNumber(datum.z_score)", "as": "z_score_num"},
+    {
+      "calculate": "datum.cluster_id == 0 ? 'A' : datum.cluster_id == 1 ? 'B' : 'C'",
+      "as": "cluster_abc"
+    },
+    {
+      "filter": "(showA && datum.cluster_abc=='A') || (showB && datum.cluster_abc=='B') || (showC && datum.cluster_abc=='C')"
+    },
+    {
+      "calculate": "datum.indicator == 'emp_ratio' ? 'Employment rate' : datum.indicator == 'gdp_pc_ppp' ? 'Income level (GDP per capita, PPP)' : datum.indicator == 'gov_cons_gdp' ? 'Size of government' : datum.indicator == 'life_exp' ? 'Longevity' : datum.indicator == 'manuf_va_gdp' ? 'Manufacturing intensity' : datum.indicator == 'pop_65' ? 'Population ageing' : datum.indicator",
+      "as": "indicator_label"
+    },
+    {"calculate": "(random() - 0.5) * 18", "as": "jitter"}
+  ],
+  "facet": {
+    "field": "indicator_label",
+    "type": "nominal",
+    "title": null,
+    "sort": [
+      "Employment rate",
+      "Income level (GDP per capita, PPP)",
+      "Size of government",
+      "Longevity",
+      "Manufacturing intensity",
+      "Population ageing"
+    ],
+    "header": {"labelFontSize": 14, "labelFontWeight": "bold"}
+  },
+  "columns": 3,
+  "spec": {
+    "width": 220,
+    "height": 200,
+    "layer": [
+      {
+        "transform": [
+          {
+            "aggregate": [
+              {"op": "min", "field": "z_score_num", "as": "min_v"},
+              {"op": "q1", "field": "z_score_num", "as": "q1_v"},
+              {"op": "median", "field": "z_score_num", "as": "med_v"},
+              {"op": "q3", "field": "z_score_num", "as": "q3_v"},
+              {"op": "max", "field": "z_score_num", "as": "max_v"}
+            ],
+            "groupby": ["cluster_abc", "indicator_label"]
+          }
+        ],
+        "layer": [
+          {
+            "mark": {"type": "rule", "strokeWidth": 2, "opacity": 0.9},
+            "encoding": {
+              "x": {
+                "field": "cluster_abc",
+                "type": "nominal",
+                "sort": ["A", "B", "C"],
+                "title": "Cluster"
+              },
+              "y": {
+                "field": "min_v",
+                "type": "quantitative",
+                "title": "Z-score (OECD average = 0)"
+              },
+              "y2": {"field": "max_v"},
+              "color": {
+                "field": "cluster_abc",
+                "type": "nominal",
+                "legend": null,
+                "scale": {
+                  "domain": ["A", "B", "C"],
+                  "range": ["#4C78A8", "#F58518", "#E45756"]
+                }
+              },
+              "tooltip": [
+                {"field": "cluster_abc", "type": "nominal", "title": "Cluster"},
+                {
+                  "field": "indicator_label",
+                  "type": "nominal",
+                  "title": "Indicator"
+                },
+                {
+                  "field": "min_v",
+                  "type": "quantitative",
+                  "title": "Min",
+                  "format": ".2f"
+                },
+                {
+                  "field": "q1_v",
+                  "type": "quantitative",
+                  "title": "Q1",
+                  "format": ".2f"
+                },
+                {
+                  "field": "med_v",
+                  "type": "quantitative",
+                  "title": "Median",
+                  "format": ".2f"
+                },
+                {
+                  "field": "q3_v",
+                  "type": "quantitative",
+                  "title": "Q3",
+                  "format": ".2f"
+                },
+                {
+                  "field": "max_v",
+                  "type": "quantitative",
+                  "title": "Max",
+                  "format": ".2f"
+                }
+              ]
+            }
+          },
+          {
+            "mark": {"type": "bar", "size": 40, "opacity": 0.55},
+            "encoding": {
+              "x": {
+                "field": "cluster_abc",
+                "type": "nominal",
+                "sort": ["A", "B", "C"],
+                "title": null
+              },
+              "y": {"field": "q1_v", "type": "quantitative"},
+              "y2": {"field": "q3_v"},
+              "color": {
+                "field": "cluster_abc",
+                "type": "nominal",
+                "legend": null,
+                "scale": {
+                  "domain": ["A", "B", "C"],
+                  "range": ["#4C78A8", "#F58518", "#E45756"]
+                }
+              },
+              "tooltip": [
+                {"field": "cluster_abc", "type": "nominal", "title": "Cluster"},
+                {
+                  "field": "indicator_label",
+                  "type": "nominal",
+                  "title": "Indicator"
+                },
+                {
+                  "field": "max_v",
+                  "type": "quantitative",
+                  "title": "Max",
+                  "format": ".2f"
+                },
+                {
+                  "field": "q3_v",
+                  "type": "quantitative",
+                  "title": "Q3",
+                  "format": ".2f"
+                },
+                {
+                  "field": "med_v",
+                  "type": "quantitative",
+                  "title": "Median",
+                  "format": ".2f"
+                },
+                {
+                  "field": "q1_v",
+                  "type": "quantitative",
+                  "title": "Q1",
+                  "format": ".2f"
+                },
+                {
+                  "field": "min_v",
+                  "type": "quantitative",
+                  "title": "Min",
+                  "format": ".2f"
+                }
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "tick",
+              "thickness": 3,
+              "size": 44,
+              "color": "#111111",
+              "opacity": 0.9
+            },
+            "encoding": {
+              "x": {
+                "field": "cluster_abc",
+                "type": "nominal",
+                "sort": ["A", "B", "C"],
+                "title": null
+              },
+              "y": {"field": "med_v", "type": "quantitative"}
+            }
+          }
+        ]
+      },
+      {
+        "mark": {"type": "point", "opacity": 0.9, "size": 35},
+        "encoding": {
+          "x": {
+            "field": "cluster_abc",
+            "type": "nominal",
+            "sort": ["A", "B", "C"],
+            "title": null
+          },
+          "xOffset": {"field": "jitter", "type": "quantitative"},
+          "y": {"field": "z_score_num", "type": "quantitative"},
+          "color": {
+            "field": "cluster_abc",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+              "domain": ["A", "B", "C"],
+              "range": ["#4C78A8", "#F58518", "#E45756"]
+            }
+          },
+          "tooltip": [
+            {"field": "country_name", "type": "nominal", "title": "Country"},
+            {"field": "cluster_abc", "type": "nominal", "title": "Cluster"},
+            {
+              "field": "indicator_label",
+              "type": "nominal",
+              "title": "Indicator"
+            },
+            {
+              "field": "z_score_num",
+              "type": "quantitative",
+              "title": "Z-score",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "rule", "strokeDash": [4, 4], "opacity": 0.5},
+        "encoding": {"y": {"datum": 0}}
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"labelFontSize": 10, "titleFontSize": 11},
+    "title": {"fontSize": 16, "subtitleFontSize": 12}
+  }
+}

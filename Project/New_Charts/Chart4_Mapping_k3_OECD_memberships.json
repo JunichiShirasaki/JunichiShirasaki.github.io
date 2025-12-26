@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "OECD Structural Clusters on the World Map (k=3)",
+    "subtitle": [
+      "Use checkboxes to highlight clusters. Unselected OECD clusters are faded; non-OECD countries remain light grey.",
+      "If all boxes are unchecked, everything is shown in a faded style.",
+      "Join key: TopoJSON id (ISO numeric) ↔ CSV iso_num (parsed as number)."
+    ]
+  },
+  "width": 900,
+  "height": 470,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+    "format": {"type": "topojson", "feature": "countries"}
+  },
+  "params": [
+    {
+      "name": "showA",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster A "}
+    },
+    {
+      "name": "showB",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster B "}
+    },
+    {
+      "name": "showC",
+      "value": true,
+      "bind": {"input": "checkbox", "name": "Show cluster C "}
+    }
+  ],
+  "transform": [
+    {"calculate": "toNumber(datum.id)", "as": "id_num"},
+    {
+      "lookup": "id_num",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv",
+          "format": {"type": "csv", "parse": {"iso_num": "number"}}
+        },
+        "key": "iso_num",
+        "fields": ["cluster_id", "country_name", "iso3"]
+      }
+    },
+    {"calculate": "toNumber(datum.cluster_id)", "as": "cluster_id_num"},
+    {
+      "calculate": "datum.cluster_id_num == 0 ? 'Ageing, government-intensive economies (A)' : datum.cluster_id_num == 1 ? 'Manufacturing-oriented, low-government economies (B)' : datum.cluster_id_num == 2 ? 'High-income, empolyment-rich economies (C)' : null",
+      "as": "cluster_label"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.35},
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "isValid(datum.cluster_id_num)",
+        "field": "cluster_label",
+        "type": "nominal",
+        "title": "Cluster",
+        "scale": {
+          "domain": [
+            "Ageing, government-intensive economies (A)",
+            "Manufacturing-oriented, low-government economies (B)",
+            "High-income, empolyment-rich economies (C)"
+          ],
+          "range": ["#4C78A8", "#F58518", "#E45756"]
+        }
+      },
+      "value": "#d9d9d9"
+    },
+    "opacity": {
+      "condition": [
+        {"test": "!(showA || showB || showC)", "value": 0.25},
+        {"test": "!isValid(datum.cluster_id_num)", "value": 0.25},
+        {
+          "test": "(datum.cluster_id_num==0 && showA) || (datum.cluster_id_num==1 && showB) || (datum.cluster_id_num==2 && showC)",
+          "value": 1
+        }
+      ],
+      "value": 0.25
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "iso3", "type": "nominal", "title": "ISO3"},
+      {"field": "cluster_label", "type": "nominal", "title": "Cluster"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "legend": {
+      "orient": "bottom",
+      "direction": "horizontal",
+      "labelLimit": 1000
+    }
+  }
+}

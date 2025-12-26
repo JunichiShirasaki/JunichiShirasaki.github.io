@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Diversity of Socio-Economic Structures across OECD Countries",
+    "subtitle": [
+      "Heatmap shows standardized values (z-scores) relative to OECD average, 2015 - 2019.",
+      "Blue = above OECD average, Red = below OECD average."
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/chart1_heatmap_long.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.indicator == 'emp_ratio' ? 'Employment rate' :datum.indicator == 'gdp_pc_ppp' ? 'Income level (GDP per capita)' :datum.indicator == 'gov_cons_gdp' ? 'Size of government' :datum.indicator == 'life_exp' ? 'Longevity' :datum.indicator == 'manuf_va_gdp' ? 'Manufacturing intensity' :datum.indicator == 'pop_65' ? 'Population ageing' :datum.indicator",
+      "as": "indicator_label"
+    }
+  ],
+  "width": 320,
+  "height": 420,
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "country_name", "type": "nominal", "title": null},
+    "x": {
+      "field": "indicator_label",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Income level (GDP per capita)",
+        "Employment rate",
+        "Size of government",
+        "Longevity",
+        "Manufacturing intensity",
+        "Population ageing"
+      ],
+      "axis": {"labelAngle": -30}
+    },
+    "color": {
+      "field": "z_score",
+      "type": "quantitative",
+      "title": ["Z-score", "(OECD average = 0)"],
+      "scale": {"scheme": "redblue", "domainMid": 0}
+    },
+    "tooltip": [
+      {"field": "country_name", "type": "nominal", "title": "Country"},
+      {"field": "indicator_label", "type": "nominal", "title": "Indicator"},
+      {
+        "field": "z_score",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Z-score"
+      }
+    ]
+  },
+  "config": {
+    "axis": {"labelFontSize": 11},
+    "title": {"fontSize": 16, "subtitleFontSize": 12},
+    "view": {"stroke": null}
+  }
+}

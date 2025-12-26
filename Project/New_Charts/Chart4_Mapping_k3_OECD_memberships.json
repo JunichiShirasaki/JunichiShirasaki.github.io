@@ -5,7 +5,8 @@
     "subtitle": [
       "Use checkboxes to highlight clusters. Unselected OECD clusters are faded; non-OECD countries remain light grey.",
       "If all boxes are unchecked, everything is shown in a faded style.",
-      "Join key: TopoJSON id (ISO numeric) ↔ CSV iso_num (parsed as number)."
+      "Join key: TopoJSON id (ISO numeric) ↔ CSV iso_num (parsed as number).",
+      "Source: World Bank"
     ]
   },
   "width": 900,

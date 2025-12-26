@@ -3,8 +3,9 @@
   "title": {
     "text": "Within-cluster dispersion across socio-economic indicators",
     "subtitle": [
-      "Boxplots show the distribution of country-level z-scores within each structural cluster (2015–2019).",
-      "Use checkboxes to show/hide clusters. Points are jittered horizontally to reveal overlap."
+      "Boxplots show the distribution of country-level z-scores within each structural cluster (2015 - 2019).",
+      "Use checkboxes to show/hide clusters. Points are jittered horizontally to reveal overlap.",
+      "Source: World Bank"
     ]
   },
   "data": {

@@ -4,7 +4,8 @@
     "text": "Structural Profiles of OECD Countries (k-means clusters, k=3)",
     "subtitle": [
       "Lines show cluster-average standardized values (z-scores) across six dimensions, 2015 - 2019.",
-      "This summarises the typical structure of each cluster rather than country-level outcomes."
+      "This summarises the typical structure of each cluster rather than country-level outcomes.",
+      "Source: World Bank"
     ]
   },
   "data": {

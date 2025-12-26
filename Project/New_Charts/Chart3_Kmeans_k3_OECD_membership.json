@@ -6,7 +6,8 @@
       "Top: number of countries per cluster. Bottom: country membership list.",
       "Cluster A: Ageing, government-intensive economies",
       "Cluster B: Manufacturing-oriented, low-government economies",
-      "Cluster C: High-income, employment-rich economies"
+      "Cluster C: High-income, employment-rich economies",
+      "Source: World Bank"
     ]
   },
   "data": {

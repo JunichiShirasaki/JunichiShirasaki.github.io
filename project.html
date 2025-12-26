@@ -74,15 +74,15 @@
             </p>
 
             <p>
-                After retrieving country-level data from the World Bank API, I harmonised country identifiers and constructed period averages (2015 - 2019) to reduce short-term volatility. 
-                The analysis excludes data from 2020 onwards because the COVID-19 pandemic and Russia's invasion of Ukraine may introduce unusually large shocks, making cross-country structural comparison less stable. 
-                To make indicators comparable, each variable is standardised using z-scores. 
+                After retrieving country-level data from the World Bank, I harmonised country identifiers and constructed period averages (2015 - 2019) to reduce short-term volatility. 
+                Data from 2020 onwards are excluded because the COVID-19 pandemic and Russia's invasion of Ukraine may introduce unusually large shocks, making cross-country structural comparison less stable. 
+                To make indicators comparable, each figure is standardised using z-scores. 
                 In other words, for each indicator, I subtract the OECD average from a country's value and then divide the result by the OECD standard deviation, using data averaged over 2015 - 2019. 
-                These standardised indicators formed the basis for a heatmap and k-means clustering to identify broad structural groupings among OECD countries. 
+                These indicators form the basis for the heatmap and k-means clustering. 
                 Visualisation is implemented using Vega-Lite.<br> 
                 One challenge was ensuring consistent joins between statistical data and a geographic TopoJSON file.
-                I addressed this problem by matching ISO numeric codes and validating joins programmatically in Python before visualisation.
-                The source of the TopoJSON is as folloes. This file is also collected in the Google Colab notebook above.
+                I addressed this by matching ISO numeric codes and validating joins programmatically in Python.
+                This TopoJSON is also collected in the Google Colab notebook above.
             </p>
 
             <p>
@@ -101,12 +101,12 @@
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Introduction (Chart0)<br>
-                 Are OECD countries are homogeneous? Example: Variation in population ageing across OECD countries </strong>
+                 Are OECD countries are homogeneous?<br>
+                 Example: Variation in population ageing</strong>
             </p>     
             <p> 
-                This chart illustrates the distribution of population ageing across OECD countries using a single indicator: <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (data source: the Wrodld Bank).
-                The purpose of this chart is not to analyse ageing in itself, but to demonstrate that even within the OECD, countries differ substantially along just one commonly used socio-economic dimension. 
-                The spread visible in this chart shows that OECD countries are far from uniform, even before considering multiple indicators simultaneously.
+                This chart illustrates the distribution of population ageing across OECD countries using <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (Wrodld Bank).
+                Its purpose is not to analyse ageing itself, but to demonstrate that OECD countries differ substantially even along a single socio-economic dimension. 
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/analysis_capitalism_model_2015_2019.csv"> here</a><br>
@@ -125,10 +125,9 @@
             </p>     
             <p> 
                 This heatmap compares OECD countries across six standardised socio-economic indicators. 
-                Values represent deviations from the OECD average and this allows structurally different dimensions to be compared on a common scale.
+                Values represent deviations from the OECD average and this allows comparison across dimensions.
                 The chart reveals substantial heterogeneity.
                 In other words, no country is consistently above or below average across all dimensions. 
-                This challenges the assumption that OECD membership alone implies comparability.
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart1_heatmap_long.csv"> here</a><br>
@@ -152,13 +151,12 @@
          <div class="chart-description">
                <p class="chart-title"> 
                 <strong>Chart2<br>
-                 Three patterns in OECD countries: K-means methods</strong>
+                 Three patterns in OECD countries: K-means clustering</strong>
                </p> 
                <p> 
                 This chart summarises OECD socio-economic structures using k-means clustering. 
                 Based on six standardised indicators, countries are grouped into three clusters. 
-                Each line represents the cluster-average z-score across dimensions and highlights systematic structural patterns rather than country-level outcomes. 
-                The chart provides an interpretable summary of the main structural types within the OECD.
+                Each line represents the cluster-average z-score and highlights systematic structural patterns rather than country-level outcomes. 
                </p> 
                <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k3.csv"> here</a><br>
@@ -176,8 +174,8 @@
                  Which and how many countries are in each cluster?</strong>
             </p> 
             <p> 
-                This identifies which OECD countries belong to each structural cluster.
-                It translates abstract clustering results into concrete country groupings, which highlights the diversity of structures within the OECD
+                This identifies which OECD countries belong to each cluster.
+                It translates abstract clustering results into concrete country groupings, which highlights the diversity of structures within the OECD.
             </p> 
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3.csv"> here</a><br>
@@ -193,9 +191,9 @@
                  Geographic distribution of structural clusters</strong>
             </p> 
             <p> 
-                This chart shows how OECD structural clusters are distributed across the world map.
-                While some clusters include groups of geographically proximate countries, others are spread across multiple regions.
-                This indicates that similarities in socio-economic structures cannot be explained by geographic proximity alone.
+                This chart shows how OECD structural clusters are distributed across the world.
+                While some clusters include geographically proximate countries, others are spread across regions.
+                This indicates that structural similarities might not be explained by geography alone.
             </p> 
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv"> here</a><br>
@@ -213,13 +211,11 @@
                  Heterogeneity within Structural Cluster</strong>
             </p>     
             <p> 
-                This chart illustrates heterogeneity within each structural cluster by showing the distribution of country-level z-scores for each indicator.
-                Boxplots summarise the median and interquartile range and jittered points represent individual country observations. 
-                Although clusters capture broad structural similarities, substantial variation remains within each group. 
+                This chart illustrates within-cluster heterogeneity by showing distributions of country-level z-scores.
+                Boxplots summarise the median and interquartile range and points represent individual countries. 
+                Despite broad similarities, substantial variation remains within clusters. 
                 This indicates that cluster membership does not imply uniform outcomes. 
                 This highlights a key limitation of cluster-level summaries.
-                They can conceal internal diversity relevant for policy comparison. 
-                Overall, Chart 5 reinforces the project's central argument that understanding cross-country differences requires attention to within-group variation, not only group-level patterns.
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv"> here</a><br>
@@ -241,7 +237,7 @@
         </h2>
             <p> 
                 This project shows that treating OECD countries as a single homogeneous group can be misleading. 
-                By combining standardised indicators with clustering and visualisation, it demonstrates that countries often labelled as “comparable” occupy very different structural positions. 
+                By combining standardised indicators with clustering and visualisation, it demonstrates that countries often labelled as comparable occupy very different structural positions. 
                 Rather than focusing on simple rankings, a more informative approach is to consider which structural group a country belongs to and how diverse that group itself is.
             </p>
 

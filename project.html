@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>    
-    <link rel="stylesheet" type="text/css" href="Example3.css">
+    <link rel="stylesheet" type="text/css" href="Project_CSS.css">
     <title>My Project</title> 
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -9,10 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
-        #chartGrid {
-            display: flex;
-        }
-        .cc-title {
+        
+        .section-title {
         color: green;
         text-align: center;
         }
@@ -20,92 +18,276 @@
          font-weight: 800;
          font-size: 1.1em;
         }
-        #charts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 12px;
+        
+        .chart-description + figure {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+        
+        .chart-description + figure .vega-embed {
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 
 </head>
 <body>
     <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        My project page: How renewable energy mitigated the inmpact of energy shock?
+        My project page<br>
+        How do OECD countries cluster into distinct socio-economic structures, and how much heterogeneity remains within these structural clusters?
 
     </h1>
+    
+    <section>
 
-
-        <section>
-        <div class="chart-description">
-            <h2 class="cc-title">
-                Introduction<br> 
+            <h2 class="section-title">
+                Project aims 
             </h2>
             <p> 
-                Pending.<br>
-                Pending.
+                Governments and media often compare countries by referring to their rank among OECD members, implicitly treating the OECD as a single, homogeneous group. 
+                This project challenges that assumption by examining whether OECD countries are in fact structurally comparable. 
+                Using six socio-economic indicators, it explores patterns of similarity and difference across OECD countries and identifies clusters of countries with similar structural profiles. 
+                The aim is to show that simple ranking-based comparisons can obscure substantial structural heterogeneity within the OECD and that a cluster-based perspective provides a more informative way to understand cross-country differences.<br>
             </p>
+
+            <h2 class="section-title">
+                Data & Tools 
+            </h2>
+            
+            <p> 
+                All data used in this project are sourced from the World Bank’s open API.
+                Data collection, cleaning and preparation were fully automated using Python. 
+                A single Google Colab notebook handles the entire process, from querying the World Bank API to producing the cleaned and analysis-ready CSV files used in the visualisations.
+                This approach ensures full reproducibility: by running the notebook, the entire dataset can be regenerated in one step, allowing the analysis to be easily updated or extended as new data become available.<br>
+            </p>
+            
+            <p> 
+
+                Colab notebook:<a href="https://colab.research.google.com/drive/1CGvbnFpxLU4rcg5iz8KtN9DD3WlKhBD0?usp=sharing"> here</a> 
+                
+            </p>
+
+            <p>
+                After retrieving raw country-level data from the World Bank API, I harmonised country identifiers and constructed period averages (2015 - 2019) to reduce short-term volatility. 
+                The analysis deliberately excludes data from 2020 onwards because the COVID-19 pandemic and Russia’s invasion of Ukraine might introduce unusually large shocks to several indicators, which might make cross-country structural comparison less stable.
+                To make indicators comparable, each variable is standardised using z-scores.
+                In other words, for each indicator, I subtract the OECD average from a country’s value and then divide the result by the OECD standard deviation. 
+                The calculation uses data averaged over the period 2015 - 2019. 
+                These standardised indicators formed the basis for making a heatmap and conducting a k-means clustering, which was used to identify broad structural groupings among OECD countries.
+                Visualisation is implemented using Vega-Lite. 
+                One challenge was ensuring consistent joins between statistical data and a geographic TopoJSON file.
+                I addressed this problem by matching ISO numeric codes and validating joins programmatically in Python before visualisation.
+                The source of the TopoJSON is as folloes. This file is also collected in the Google Colab notebook above.
+            </p>
+
+            <p>
+                TopoJSON:<a href="https://github.com/topojson/world-atlas">here</a>
+            </p>
+
+
+    </section>
+
+    <section>
+
+        <h2 class="section-title">
+                Discussion & Visualisation 
+        </h2>
+        
+        <div class="chart-description">
             <p class="chart-title"> 
-                <strong>Chart1<br>
-                 UK exports to the US, by transport mode</strong>
+                <strong>Introduction (Chart0)<br>
+                 Are OECD countries are homogeneous? Example: Variation in population ageing across OECD countries </strong>
             </p>     
             <p> 
-                This bar chart illustrates UK exports to the US by mode of transport. Air freight accounts for the largest share, around $38 billion, followed by sea transport at about $30 billion.
+                This chart illustrates the distribution of population ageing across OECD countries using a single indicator: <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (data source: the Wrodld Bank).
+                The purpose of this chart is not to analyse ageing in itself, but to demonstrate that even within the OECD, countries differ substantially along just one commonly used socio-economic dimension. 
+                The spread visible in this chart shows that OECD countries are far from uniform, even before considering multiple indicators simultaneously.
             </p>
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/analysis_capitalism_model_2015_2019.csv"> here</a>
+             </p>
+        </div>
+        <figure id="Location0"></figure> 
+
+
+        <div class="chart-description">
+          
+            <p class="chart-title"> 
+                <strong>Chart1<br>
+                 OECD countries are not homogeneous. </strong><br>
+                 <strong>Diversity of socio-economic structures across OECD countries</strong>
+            </p>     
+            <p> 
+                This heatmap provides an overview of socio-economic diversity within the OECD by comparing countries across six key indicators: income level, employment, government size, longevity, industrial structure and population ageing.
+                Each indicator is standardised using z-scores.
+                Therefore, the values represent deviations from the OECD average rather than absolute levels. 
+                This allows structurally different dimensions to be compared on a common scale. 
+                Blue cells indicate values above the OECD average, while red cells indicate values below it.
+                This chart highlights substantial heterogeneity across OECD countries. 
+                No country is consistently above or below average across all dimensions. 
+                This visualisation challenges the assumption that OECD membership alone implies comparability.
+            </p>
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart1_heatmap_long.csv"> here</a>
+            </p>
+
         </div>
         <figure id="Location1"></figure> 
-            <p> 
-                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> 
-                <!-- URL: Economic Observatory -->
-            </p>
+
+           <p>
+            The source and brief explanations of the indicators above: All of them are from the World Bank.<br>
+            • <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
+            • <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a> The proportion of a country's population that is employed.<br>           
+            • <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
+            • <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
+            • <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a> Manufacturing value added as a share of GDP<br>
+            • <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">Population ageing</a>: Share of population aged 65 and above<br>
+           </p>
+        
 
          <div class="chart-description">
                <p class="chart-title"> 
                 <strong>Chart2<br>
-                 Reciprocal tariffs, major trading partners</strong>
-            </p> 
-            <p> 
-                This bar graph presents reciprocal tariff rates among major US trading partners. Vietnam accounts for the highest rate at 46%.
-            </p> 
+                 Three patterns in OECD countries: K-means methods</strong>
+               </p> 
+               <p> 
+                This summarises the socio-economic structures of OECD countries using cluster-level profiles. 
+                Based on six standardised indicators, countries are grouped into three clusters using k-means clustering. 
+                Each line represents the average z-score of a cluster across the six dimensions, whcih shows how each group typically differs from the OECD average.
+                Rather than focusing on individual countries, this chart highlights systematic structural patterns. 
+                For example, cluster A, which is represented with blue, is characterised by a relatively large government sector and more advanced population ageing, while cluster B, which is represented with orange, combines lower government consumption with stronger manufacturing intensity.
+                By presenting cluster averages, this provides an interpretable summary of the main structural types within the OECD.
+               </p> 
+               <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k3.csv"> here</a>
+               </p>
+
             </div>
-        <figure id="Location2"></figure> 
+            <figure id="Location2"></figure> 
+            
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart3<br>
+                 Which and how many countries are in each cluster?</strong>
+            </p> 
             <p> 
-                Colab notebook:<a href="https://colab.research.google.com/drive/1yyCdtaShOWDXrvD0JSXbJmeHLC5jo3V5?usp=sharing"> here</a> 
-                
+                This identifies which OECD countries belong to each structural cluster.
+                It translates abstract clustering results into concrete country groupings, which highlights the diversity of structures within the OECD
+            </p> 
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3.csv"> here</a>
             </p>
+
+            </div>
+        <figure id="Location3"></figure> 
+
+        <div class="chart-description">
+               <p class="chart-title"> 
+                <strong>Chart4<br>
+                 Geographic distribution of structural clusters</strong>
+            </p> 
+            <p> 
+                This chart shows how OECD structural clusters are distributed across the world map.
+                While some clusters include groups of geographically proximate countries, others are spread across multiple regions.
+                This indicates that similarities in socio-economic structures cannot be explained by geographic proximity alone.
+            </p> 
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv"> here</a><br>
+                TopoJSON:<a href="https://github.com/topojson/world-atlas">here</a>
+            </p>
+
+            </div>
+        <figure id="Location4"></figure> 
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart5<br>
+                 Heterogeneity within Structural Cluster</strong>
+            </p>     
+            <p> 
+                Chart 5 examines heterogeneity within each structural cluster by showing the distribution of country-level z-scores for each indicator. 
+                Boxplots summarise the median and interquartile range within clusters, while jittered points represent individual country observations. 
+                Although the clusters capture broad structural similarities, the chart shows that substantial variation remains within each group. 
+                For several indicators, countries in the same cluster exhibit both above- and below-OECD-average values, indicating that cluster membership does not imply uniform outcomes across dimensions. 
+                This highlights a key limitation of cluster-level summaries. They can conceal meaningful internal diversity that is relevant for policy comparison. 
+                Overall, Chart 5 reinforces the project’s central argument that understanding cross-country differences requires attention not only to group-level patterns, but also to variation among countries that are often treated as structurally similar..
+            </p>
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv"> here</a>
+            </p>
+
+        </div>
+        <figure id="Location5"></figure> 
+
+        
     </section>
 
+
+    <section>
+
+        <h2 class="section-title">
+                Conclusion<br> 
+        </h2>
+            <p> 
+                This project shows that treating OECD countries as a single, homogeneous group can be misleading. 
+                By combining standardised indicators with clustering and visualisation, this analysis demonstrates that countries often labelled as “comparable” in rankings occupy very different structural positions. 
+                These findings suggest that simple cross-country rankings can obscure important structural differences, which may matter for policy comparison and interpretation. 
+                Rather than asking whether a country ranks higher or lower within the OECD, a more informative question is which structural group it belongs to, and how diverse that group itself is.
+            </p>
+
+    </section>
+
+    <section>
+
+        <h2 class="section-title">
+                Data Sources<br> 
+        </h2>
+            <p> 
+                World Bank Open Data<br>
+            • <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
+            • <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a> The proportion of a country's population that is employed.<br>           
+            • <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
+            • <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
+            • <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a> Manufacturing value added as a share of GDP<br>
+            • <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">Population ageing</a>: Share of population aged 65 and above<br>
+
+                
+            </p>
+            <p> 
+                TopoJSON:<a href="https://github.com/topojson/world-atlas">here</a>
+            </p>
+            <p> 
+                OECD:<a href="https://www.oecd.org/en/about/members-partners.html">here</a>
+            </p>
+
+
+    </section>
+
+
+
         <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
+        let figure_0_spec = "Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json"; 
+        let figure_1_spec = "Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json"; 
+        let figure_2_spec = "Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json"; 
+        let figure_3_spec = "Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json"; 
+        let figure_4_spec = "Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json"; 
+        let figure_5_spec = "Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json"; 
 
-        //let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_1_spec = "Project/Chart1 (early:late_inflation)/Chart1 (early:late_inflation).json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_3_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_4_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_5_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_6_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_7_spec = ""; // We're storing the URL of the graph we want to display in a variable
-        let figure_8_spec = ""; // We're storing the URL of the graph we want to display in a variable
+        vegaEmbed('#Location0', figure_0_spec) 
 
+        vegaEmbed('#Location1', figure_1_spec) 
 
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location2', figure_2_spec) 
 
-        vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location3', figure_3_spec) 
 
-        vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location4', figure_4_spec) 
        
-        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        vegaEmbed('#Location6', figure_6_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        vegaEmbed('#Location7', figure_7_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        vegaEmbed('#Location8', figure_8_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-    
+        vegaEmbed('#Location5', figure_5_spec) 
+                
 
     </script>
 

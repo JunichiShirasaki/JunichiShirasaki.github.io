@@ -36,11 +36,11 @@
 <body>
     <h1 class="big" style="margin-bottom: 0px;"> 
         My project page<br>
+    </h1>
+    <h1 class="big" style="margin-bottom: 0px;"> 
         How do OECD countries cluster into distinct socio-economic structures, and how much heterogeneity remains within these structural clusters?
-
     </h1>
         <p style="margin-top: 0px; color: rgb(55, 31, 50)">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
         <a href="index.html">Portfolio Page</a> | 
         <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
     </p>
@@ -66,15 +66,6 @@
             <p> 
                 All numerical data used in this project are sourced from the World Bank’s open API. 
                 Data collection, cleaning and preparation were fully automated using Python in a single Google Colab notebook, which ensures full reproducibility.<br>
-            </p>
-            
-            <p> 
-
-                Colab notebook:<a href="https://colab.research.google.com/drive/1CGvbnFpxLU4rcg5iz8KtN9DD3WlKhBD0?usp=sharing"> here</a> 
-                
-            </p>
-
-            <p>
                 After retrieving country-level data from the World Bank, I harmonised country identifiers and constructed period averages (2015 - 2019) to reduce short-term volatility. 
                 Data from 2020 onwards are excluded because the COVID-19 pandemic and Russia's invasion of Ukraine may introduce unusually large shocks, making cross-country structural comparison less stable. 
                 To make indicators comparable, each figure is standardised using z-scores. 
@@ -84,8 +75,12 @@
                 One challenge was ensuring consistent joins between statistical data and a geographic TopoJSON file.
                 I addressed this by matching ISO numeric codes and validating joins programmatically in Python.
                 This TopoJSON is also collected in the Google Colab notebook above.<br>
-                Replication mpte: To reproduce the full process, open the Colab notebook and run. 
+                Replication note: To reproduce the full process, open the Colab notebook and run. 
                 This will (1) query the World Bank API, (2) clean and harmonise the data and (3) output the analyse-ready CSV files used in the charts below.
+            </p>
+
+            <p> 
+                Colab notebook:<a href="https://colab.research.google.com/drive/1CGvbnFpxLU4rcg5iz8KtN9DD3WlKhBD0?usp=sharing"> here</a> 
             </p>
 
             <p>

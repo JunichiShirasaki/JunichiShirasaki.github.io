@@ -445,7 +445,7 @@
             </h2>
             <p> 
                 The task in this code challenge is to produce an advanced analytics chart and conduct machine learning.<br>
-                <strong>Hypothesis: After controlling for income, OECD countries differ in per-capita CO₂ emissions, indicating the role of non-income factors such as energy mix and policy.</strong>
+                <strong>Hypothesis: After controlling for income, OECD countries differ in per-capita CO2 emissions, indicating the role of non-income factors such as energy mix and policy.</strong>
             </p>
             <p class="chart-title"> 
                 <strong>Chart17<br>
@@ -471,11 +471,11 @@
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Chart18<br>
-                 De-trended CO₂ emissions per capita</strong>
+                 De-trended CO2 emissions per capita</strong>
             </p> 
             <p> 
-             This chart shows de-trended CO₂ emissions per capita.
-             Positive values indicate countries emitting more CO₂ than predicted by income, while negative values indicate under-performance.
+             This chart shows de-trended CO2 emissions per capita.
+             Positive values indicate countries emitting more CO2 than predicted by income, while negative values indicate under-performance.
             </p>
         </div>
         <figure id="Location24"></figure>
@@ -495,25 +495,24 @@
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        //let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/datavis/refs/heads/main/newsletters/2025-04-05-liberation-day/visualisation/fig3_uk-exports-us-mode.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_3_spec = "CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_4_spec = "CC2_Chart4_Json_Graph_China_Renewable.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_5_spec = "CC3_wk2_Unemployment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_6_spec = "CC3_Employment_rate_UK.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_7_spec = "CC4_Repulicate.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_8_spec = "CC4_Improved.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_9_spec = "CC5_API_worldbank_CO2emission_Japan_UK.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_10_spec = "CC5_Scraping_manufacturing_China_USA_Japan.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_17_spec = "CC7_map_Scotland_coordination.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_18_spec = "CC7_map_Wales_Choropleths.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_19_spec = "CC8_chart1_sugar_prices.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_20_spec = "CC8_chart2_sugar_prices_region.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_21_spec = "CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_22_spec = "CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_23_spec = "CC10_Chart1_GDP_CO2_OECD_2019.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_24_spec = "CC10_chart2_residuals_OECD_2019.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // /fig1_reciprocal-tariffs.json
+        let figure_3_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // CC2_Chart3_Json_Graph_Japan_Nuclear.json
+        let figure_4_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart4_Json_Graph_China_Renewable.json"; // CC2_Chart4_Json_Graph_China_Renewable.json
+        let figure_5_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC3_wk2_Unemployment_rate_UK.json"; // CC3_wk2_Unemployment_rate_UK.json
+        let figure_6_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC3_Employment_rate_UK.json"; // CC3_Employment_rate_UK.json
+        let figure_7_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC4_Repulicate.json"; // CC4_Repulicate.json
+        let figure_8_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC4_Improved.json"; // CC4_Improved.json
+        let figure_9_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC5_API_worldbank_CO2emission_Japan_UK.json"; // CC5_API_worldbank_CO2emission_Japan_UK.json
+        let figure_10_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC5_Scraping_manufacturing_China_USA_Japan.json"; // CC5_Scraping_manufacturing_China_USA_Japan.json
+        let figure_17_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_map_Scotland_coordination.json"; // CC7_map_Scotland_coordination.json
+        let figure_18_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_map_Wales_Choropleths.json"; // CC7_map_Wales_Choropleths.json
+        let figure_19_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC8_chart1_sugar_prices.json"; // CC8_chart1_sugar_prices.json
+        let figure_20_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC8_chart2_sugar_prices_region.json"; // CC8_chart2_sugar_prices_region.json
+        let figure_21_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"; // CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json
+        let figure_22_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"; // CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json
+        let figure_23_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC10_Chart1_GDP_CO2_OECD_2019.json"; // CC10_Chart1_GDP_CO2_OECD_2019.json
+        let figure_24_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC10_chart2_residuals_OECD_2019.json"; // CC10_chart2_residuals_OECD_2019.json
 
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1

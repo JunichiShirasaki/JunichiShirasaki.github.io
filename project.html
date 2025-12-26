@@ -82,7 +82,9 @@
                 Visualisation is implemented using Vega-Lite.<br> 
                 One challenge was ensuring consistent joins between statistical data and a geographic TopoJSON file.
                 I addressed this by matching ISO numeric codes and validating joins programmatically in Python.
-                This TopoJSON is also collected in the Google Colab notebook above.
+                This TopoJSON is also collected in the Google Colab notebook above.<br>
+                Replication mpte: To reproduce the full process, open the Colab notebook and run. 
+                This will (1) query the World Bank API, (2) clean and harmonise the data and (3) output the analyse-ready CSV files used in the charts below.
             </p>
 
             <p>
@@ -101,11 +103,11 @@
         <div class="chart-description">
             <p class="chart-title"> 
                 <strong>Introduction (Chart0)<br>
-                 Are OECD countries are homogeneous?<br>
+                 Are OECD countries homogeneous?<br>
                  Example: Variation in population ageing</strong>
             </p>     
             <p> 
-                This chart illustrates the distribution of population ageing across OECD countries using <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (Wrodld Bank).
+                This chart illustrates the distribution of population ageing across OECD countries using <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (world Bank).
                 Its purpose is not to analyse ageing itself, but to demonstrate that OECD countries differ substantially even along a single socio-economic dimension. 
             </p>
             <p>

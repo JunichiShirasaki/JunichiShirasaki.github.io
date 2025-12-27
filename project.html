@@ -30,6 +30,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
     </style>
 
 </head>
@@ -55,8 +56,7 @@
                 Governments and media often compare countries by referring to their rank among OECD members, implicitly treating the OECD as a homogeneous group.
                 This project challenges that assumption by examining whether OECD countries are structurally comparable.
                 Using six socio-economic indicators, it explores similarities and differences across OECD countries and identifies clusters with similar structural profiles.
-                The aim is to show that a cluster-based perspective provides a more informative understanding of cross-country differences.
-                In other words, a key motivation is to correct a common misunderstanding: a country's rank or income similarity does not necessarily imply structural similarity within the OECD.<br>
+                The aim is to demonstrate that OECD countries can be more informatively understood as belonging to several broad structural types rather than as a single homogeneous group.
             </p>
 
             <h2 class="section-title">
@@ -65,18 +65,18 @@
             
             <p> 
                 All numerical data used in this project are sourced from the World Bank's open API. 
-                Data collection, cleaning and preparation were fully automated using Python in a single Google Colab notebook, which ensures full reproducibility.<br>
+                Data collection, cleaning and preparation were automated using Python in a single Google Colab notebook, ensuring reproducibility.<br>
                 After retrieving country-level data from the World Bank, I harmonised country identifiers and constructed period averages (2015 - 2019) to reduce short-term volatility. 
-                Data from 2020 onwards are excluded because the COVID-19 pandemic and Russia's invasion of Ukraine may introduce unusually large shocks, making cross-country structural comparison less stable. 
+                Data from 2020 onwards are excluded because the COVID-19 pandemic and Russia's invasion of Ukraine may introduce unusually large shocks, making cross-country comparison less stable. 
                 To make indicators comparable, each figure is standardised using z-scores. 
                 In other words, for each indicator, I subtract the OECD average from a country's value and then divide the result by the OECD standard deviation, using data averaged over 2015 - 2019. 
-                These indicators form the basis for the heatmap and k-means clustering. 
+                These indicators form the basis for the heatmap and clustering. 
                 Visualisation is implemented using Vega-Lite.<br> 
                 One challenge was ensuring consistent joins between statistical data and a geographic TopoJSON file.
                 I addressed this by matching ISO numeric codes and validating joins programmatically in Python.
                 This TopoJSON is also collected in the Google Colab notebook above.<br>
                 Replication note: To reproduce the full process, open the Colab notebook and run. 
-                This will (1) query the World Bank API, (2) clean and harmonise the data and (3) output the analyse-ready CSV files used in the charts below.
+                This will (1) query the World Bank API, (2) clean and harmonise the data and (3) output the CSV files used in the charts below.
             </p>
 
             <p> 
@@ -98,13 +98,13 @@
         
         <div class="chart-description">
             <p class="chart-title"> 
-                <strong>Introduction (Chart0)<br>
-                 Are OECD countries homogeneous?<br>
+                <strong>Introduction: Are OECD countries homogeneous?<br>
+                 Chart 0<br>
                  Example: Variation in population ageing</strong>
             </p>     
             <p> 
-                This chart illustrates the distribution of population ageing across OECD countries using <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share of the population aged 65 and over</a> (world Bank).
-                Its purpose is not to analyse ageing itself, but to demonstrate that OECD countries differ substantially even along a single socio-economic dimension. 
+                This chart illustrates the distribution of population ageing across OECD countries using <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">the share aged 65 and over</a> (World Bank).
+                The purpose of this chart is to demonstrate that OECD countries differ substantially even along a single socio-economic dimension. 
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/analysis_capitalism_model_2015_2019.csv"> here</a><br>
@@ -117,15 +117,14 @@
         <div class="chart-description">
           
             <p class="chart-title"> 
-                <strong>Chart1<br>
-                 OECD countries are not homogeneous. </strong><br>
+                <strong>Chapter 1: OECD countries are not homogeneous.<br>
+                 Chart 1 </strong><br>
                  <strong>Diversity of socio-economic structures across OECD countries</strong>
             </p>     
             <p> 
                 This heatmap compares OECD countries across six standardised socio-economic indicators. 
                 Values represent deviations from the OECD average and this allows comparison across dimensions.
-                The chart reveals substantial heterogeneity.
-                In other words, no country is consistently above or below average across all dimensions. 
+                No country is consistently above or below average across all dimensions. 
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart1_heatmap_long.csv"> here</a><br>
@@ -154,7 +153,7 @@
                <p> 
                 This chart summarises OECD socio-economic structures using k-means clustering. 
                 Based on six standardised indicators, countries are grouped into three clusters. 
-                Each line represents the cluster-average z-score and highlights systematic structural patterns rather than country-level outcomes. 
+                Each line represents the cluster-average z-score. 
                </p> 
                <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k3.csv"> here</a><br>
@@ -173,7 +172,7 @@
             </p> 
             <p> 
                 This identifies which OECD countries belong to each cluster.
-                It translates abstract clustering results into concrete country groupings, which highlights the diversity of structures within the OECD.
+                It translates clustering results into concrete country groupinggs.
             </p> 
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3.csv"> here</a><br>
@@ -191,7 +190,7 @@
             <p> 
                 This chart shows how OECD structural clusters are distributed across the world.
                 While some clusters include geographically proximate countries, others are spread across regions.
-                This indicates that structural similarities might not be explained by geography alone.
+                This indicates that geography alone may not explain structural similarity.
             </p> 
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv"> here</a><br>
@@ -211,9 +210,9 @@
             <p> 
                 This chart illustrates within-cluster heterogeneity by showing distributions of country-level z-scores.
                 Boxplots summarise the median and interquartile range and points represent individual countries. 
-                Despite broad similarities, substantial variation remains within clusters. 
+                Despite similarities, substantial variation remains within clusters. 
                 This indicates that cluster membership does not imply uniform outcomes. 
-                This highlights a key limitation of cluster-level summaries.
+                This highlights a limitation of cluster-level summaries.
             </p>
             <p>
                 The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv"> here</a><br>
@@ -224,6 +223,42 @@
         </div>
         <figure id="Location5"></figure> 
 
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chapter 2: How about k=4?<br>
+                Chart6: Four patterns in OECD countries: K-means clustering ?</strong>
+            </p>     
+            <p> 
+                This shows the structural profile using k-means clustering with k=4.
+                Relative to the k=3 solution, an additional cluster (D) appears with a more distinctive profile in several dimensions.
+                This may suggest that increasing k mainly refines the classification rather than overturning the main typology.
+            </p>
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k4.csv"> here</a><br>
+                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json"> here</a>
+
+            </p>
+
+        </div>
+        <figure id="Location6"></figure>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart7: Which countries are in cluster D ? </strong>
+            </p>     
+            <p> 
+                This shows how many countries are in each cluster with k=4.
+                Compared to k=3, cluster A is entirely unchanged, and most countries in cluster B and C remain in the same groups.
+                The fourth cluster (cluster D) consists of only three countries - Ireland, Korea and Switzerland.
+                This indicates that k=4 mainly separates a small set of outliers rather than reshaping the overall clustering structure.
+            </p>
+            <p>
+                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k4.csv"> here</a><br>
+                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json"> here</a>
+
+            </p>
+       </div>
+       <figure id="Location7"></figure>  
         
     </section>
 
@@ -234,9 +269,10 @@
                 Conclusion<br> 
         </h2>
             <p> 
-                This project shows that treating OECD countries as a single homogeneous group can be misleading. 
-                By combining standardised indicators with clustering and visualisation, it demonstrates that countries often labelled as comparable occupy very different structural positions. 
-                Rather than focusing on simple rankings, a more informative approach is to consider which structural group a country belongs to and how diverse that group itself is.
+            By using standardised socio-economic indicators and clustering, this project shows that OECD countries can be more informatively understood as belonging to a small number of broad structural groups.
+            At the same time, the analysis highlights the limits of a purely cluster-based perspective. 
+            While the results suggest that, under this indicator set, OECD countries are largely organised into three core structural patterns, additional clusters mainly capture a small number of structurally distinctive cases rather than fundamentally reshaping the overall structure.
+            Overall, a combined perspective is informative: cluster-based analysis helps reveal underlying structural differences across countries, but careful attention to within-cluster diversity remains essential for meaningful cross-country comparison.
             </p>
 
     </section>
@@ -276,6 +312,9 @@
         let figure_3_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json"; // Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json
         let figure_4_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json"; // Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json
         let figure_5_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json"; // Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json
+        let figure_6_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json" //Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json
+        let figure_7_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json" //Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json
+
 
         vegaEmbed('#Location0', figure_0_spec) 
 
@@ -288,7 +327,12 @@
         vegaEmbed('#Location4', figure_4_spec) 
        
         vegaEmbed('#Location5', figure_5_spec) 
-                
+
+        vegaEmbed('#Location6', figure_6_spec) 
+
+        vegaEmbed('#Location7', figure_7_spec) 
+
+      
 
     </script>
 

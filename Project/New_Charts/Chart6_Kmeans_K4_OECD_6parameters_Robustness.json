@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Structural Profiles of OECD Countries (k-means clusters, k=4)",
+    "subtitle": [
+      "Lines show cluster-average standardized values (z-scores) across six dimensions, 2015 - 2019.",
+      "This summarises the typical structure of each cluster rather than country-level outcomes.",
+      "Source: World Bank"
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/chart2a_cluster_profile_long_k4.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.indicator == 'emp_ratio' ? 'Employment rate' : datum.indicator == 'gdp_pc_ppp' ? 'Income level (GDP per capita)' : datum.indicator == 'gov_cons_gdp' ? 'Size of government' : datum.indicator == 'life_exp' ? 'Longevity' : datum.indicator == 'manuf_va_gdp' ? 'Manufacturing intensity' : datum.indicator == 'pop_65' ? 'Population ageing' : datum.indicator",
+      "as": "indicator_label"
+    },
+    {
+      "calculate": "datum.cluster_id == 0 ? '(A)' : datum.cluster_id == 1 ? '(B)' : datum.cluster_id == 2 ? '(C)' : datum.cluster_id == 3 ? '(D)' : 'Other'",
+      "as": "cluster_label"
+    }
+  ],
+  "width": 700,
+  "height": 300,
+  "layer": [
+    {
+      "mark": {"type": "line", "point": true, "strokeWidth": 2.5},
+      "encoding": {
+        "x": {
+          "field": "indicator_label",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Employment rate",
+            "Income level (GDP per capita)",
+            "Size of government",
+            "Longevity",
+            "Manufacturing intensity",
+            "Population ageing"
+          ],
+          "axis": {"labelAngle": -25}
+        },
+        "y": {
+          "field": "mean_z",
+          "type": "quantitative",
+          "title": "Cluster-average z-score (OECD average = 0)",
+          "axis": {"format": ".2f"}
+        },
+        "color": {
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelLimit": 1000,
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 20
+          },
+          "sort": ["(A)", "(B)", "(C)", "(D)"],
+          "field": "cluster_label",
+          "type": "nominal",
+          "title": "Cluster",
+          "scale": {
+            "domain": ["(A)", "(B)", "(C)", "(D)"],
+            "range": ["#4C78A8", "#F58518", "#E45756", "green"]
+          }
+        },
+        "tooltip": [
+          {"field": "cluster_label", "type": "nominal", "title": "Cluster"},
+          {"field": "indicator_label", "type": "nominal", "title": "Dimension"},
+          {
+            "field": "mean_z",
+            "type": "quantitative",
+            "title": "Avg z-score",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.6},
+      "encoding": {"y": {"datum": 0}}
+    }
+  ],
+  "config": {
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
+    "title": {"fontSize": 16, "subtitleFontSize": 12},
+    "view": {"stroke": null}
+  }
+}

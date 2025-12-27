@@ -1,0 +1,151 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Which countries are in each cluster? (k-means, k=4)",
+    "subtitle": [
+      "Top: number of countries per cluster. Bottom: country membership list.",
+      "Source: World Bank"
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_base_data/country_cluster_membership_k4.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.cluster_id == 0 ? 'Cluster A' : datum.cluster_id == 1 ? 'Cluster B' : datum.cluster_id == 2 ? 'Cluster C' : 'Cluster D'",
+      "as": "cluster_abc"
+    }
+  ],
+  "vconcat": [
+    {
+      "transform": [
+        {
+          "aggregate": [{"op": "count", "as": "n_countries"}],
+          "groupby": ["cluster_abc"]
+        }
+      ],
+      "mark": {"type": "bar"},
+      "width": 700,
+      "height": 140,
+      "encoding": {
+        "x": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "title": null,
+          "sort": ["Cluster A", "Cluster B", "Cluster C", "Cluster D"],
+          "axis": {"labelAngle": 0, "labelFontSize": 12}
+        },
+        "y": {
+          "field": "n_countries",
+          "type": "quantitative",
+          "title": "Number of countries"
+        },
+        "color": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Cluster A", "Cluster B", "Cluster C", "Cluster D"],
+            "range": ["#4C78A8", "#F58518", "#E45756", "Green"]
+          }
+        },
+        "tooltip": [
+          {"field": "cluster_abc", "type": "nominal", "title": "Cluster"},
+          {"field": "n_countries", "type": "quantitative", "title": "Countries"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "row_number", "as": "rank"}],
+          "groupby": ["cluster_abc"],
+          "sort": [{"field": "country_name", "order": "ascending"}]
+        },
+        {"calculate": "ceil(datum.rank / 8)", "as": "col"},
+        {"calculate": "((datum.rank - 1) % 8) + 1", "as": "row"}
+      ],
+      "facet": {
+        "column": {
+          "field": "cluster_abc",
+          "type": "nominal",
+          "title": null,
+          "sort": ["Cluster A", "Cluster B", "Cluster C", "Cluster D"],
+          "header": {
+            "labelFontSize": 14,
+            "labelFontWeight": "bold",
+            "labelPadding": 8,
+            "labelAlign": "center"
+          }
+        }
+      },
+      "spec": {
+        "width": 170,
+        "height": 320,
+        "layer": [
+          {
+            "data": {
+              "values": [
+                {"col": 1, "row": 1},
+                {"col": 2, "row": 1},
+                {"col": 1, "row": 2},
+                {"col": 2, "row": 2},
+                {"col": 1, "row": 3},
+                {"col": 2, "row": 3},
+                {"col": 1, "row": 4},
+                {"col": 2, "row": 4},
+                {"col": 1, "row": 5},
+                {"col": 2, "row": 5},
+                {"col": 1, "row": 6},
+                {"col": 2, "row": 6},
+                {"col": 1, "row": 7},
+                {"col": 2, "row": 7},
+                {"col": 1, "row": 8},
+                {"col": 2, "row": 8}
+              ]
+            },
+            "mark": {
+              "type": "rect",
+              "fillOpacity": 0,
+              "stroke": "#080808",
+              "strokeWidth": 1
+            },
+            "encoding": {
+              "x": {"field": "col", "type": "ordinal", "axis": null},
+              "y": {"field": "row", "type": "ordinal", "axis": null}
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "baseline": "middle",
+              "fontSize": 11
+            },
+            "encoding": {
+              "x": {
+                "field": "col",
+                "type": "ordinal",
+                "axis": null,
+                "scale": {"domain": [1, 2]}
+              },
+              "y": {
+                "field": "row",
+                "type": "ordinal",
+                "axis": null,
+                "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8]}
+              },
+              "text": {"field": "country_name", "type": "nominal"}
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
+    "title": {"fontSize": 16, "subtitleFontSize": 12}
+  }
+}

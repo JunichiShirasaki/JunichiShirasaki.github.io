@@ -31,7 +31,7 @@ This project explores cross-country similarities and differences among OECD coun
 - HTML / CSS / JavaScript  
 - Vega-Lite  
 - Python in Google Colab
-- OECD open data  
+- World Bank open data  
 
 ---
 

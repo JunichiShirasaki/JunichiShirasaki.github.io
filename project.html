@@ -26,17 +26,15 @@
          font-size: 1.1em;
         }
         
-        .chart-description + figure {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: fit-content;
+        [id^="Location"] {
+            display: flex;
+            justify-content: center;
         }
-        
-        .chart-description + figure .vega-embed {
-        margin-left: auto;
-        margin-right: auto;
-        }
+       
+       [id^="Location"] > .vega-embed{
+        flex:0 0  auto;
+        width: auto !important;
+        max-width: 100%;}
 
     </style>
 
@@ -109,7 +107,7 @@
             </strong>
             </p>
 
-            <p class="chart-title"></p>
+            <p class="chart-title">
                  <strong>Chart 0<br>
                  Example: Variation in population ageing</strong>
             </p>     
@@ -118,11 +116,11 @@
                 The purpose of this chart is to demonstrate that OECD countries differ substantially even along a single socio-economic dimension. 
             </p>
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/analysis_capitalism_model_2015_2019.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/analysis_capitalism_model_2015_2019.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json"> here</a>
              </p>
         </div>
-        <figure id="Location0"></figure> 
+        <div id="Location0"></div> 
 
 
         <div class="chart-description">
@@ -139,23 +137,23 @@
             <p> 
                 This heatmap compares OECD countries across six standardised socio-economic indicators. 
                 Values represent deviations from the OECD average and this allows comparison across dimensions.
-                No country is consistently above or below average across all dimensions. 
+                Few countries are consistently above or below average across all dimensions. 
             </p>
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart1_heatmap_long.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart1_heatmap_long.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json"> here</a>
             </p>
 
         </div>
-        <figure id="Location1"></figure> 
+        <div id="Location1"></div> 
 
            <p>
             The source and brief explanations of the indicators above: All of them are from the World Bank.<br>
              <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
-             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a> The proportion of a country's population that is employed.<br>           
+             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a>: The proportion of a country's population that is employed<br>           
              <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
              <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
-             <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a> Manufacturing value added as a share of GDP<br>
+             <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a>: Manufacturing value added as a share of GDP<br>
              <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">Population ageing</a>: Share of population aged 65 and above<br>
            </p>
         
@@ -171,13 +169,13 @@
                 Each line represents the cluster-average z-score. 
                </p> 
                <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k3.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k3.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json"> here</a>
 
                </p>
 
             </div>
-            <figure id="Location2"></figure> 
+            <div id="Location2"></div> 
             
 
         <div class="chart-description">
@@ -190,12 +188,12 @@
                 It translates clustering results into concrete country grouping.
             </p> 
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json"> here</a>
             </p>
 
             </div>
-        <figure id="Location3"></figure> 
+        <div id="Location3"></div> 
 
         <div class="chart-description">
                <p class="chart-title"> 
@@ -208,14 +206,14 @@
                 This indicates that geography alone may not explain structural similarity.
             </p> 
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv"> here</a><br>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k3_with_isnum.csv"> here</a><br>
                 TopoJSON:<a href="https://github.com/topojson/world-atlas">here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json"> here</a>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json"> here</a>
 
             </p>
 
             </div>
-        <figure id="Location4"></figure> 
+        <div id="Location4"></div> 
 
         <div class="chart-description">
             <p class="chart-title"> 
@@ -230,13 +228,13 @@
                 This highlights a limitation of cluster-level summaries.
             </p>
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart5_heatmap_long_with_cluster_k3.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json"> here</a>
 
             </p>
 
         </div>
-        <figure id="Location5"></figure> 
+        <div id="Location5"></div> 
 
         <div class="chart-description">
             <p class="chapter-title"> 
@@ -252,13 +250,13 @@
                 This may suggest that increasing k mainly refines the classification rather than overturning the main typology.
             </p>
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k4.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/chart2a_cluster_profile_long_k4.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json"> here</a>
 
             </p>
 
         </div>
-        <figure id="Location6"></figure>
+        <div id="Location6"></div>
 
         <div class="chart-description">
             <p class="chart-title"> 
@@ -271,12 +269,12 @@
                 This indicates that k=4 mainly separates a small set of outliers rather than reshaping the overall clustering structure.
             </p>
             <p>
-                The CSV file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k4.csv"> here</a><br>
-                The JSON file for this chart is<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json"> here</a>
+                The CSV file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_base_data/country_cluster_membership_k4.csv"> here</a><br>
+                The JSON file for this chart:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json"> here</a>
 
             </p>
        </div>
-       <figure id="Location7"></figure>  
+       <div id="Location7"></div>  
         
     </section>
 
@@ -303,10 +301,10 @@
             <p> 
                 World Bank Open Data<br>
              <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
-             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a> The proportion of a country's population that is employed.<br>           
+             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a>: The proportion of a country's population that is employed<br>           
              <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
              <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
-             <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a> Manufacturing value added as a share of GDP<br>
+             <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a>: Manufacturing value added as a share of GDP<br>
              <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS">Population ageing</a>: Share of population aged 65 and above<br>
 
                 
@@ -324,33 +322,36 @@
 
 
     <script>
-        let figure_0_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json"; // Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json
-        let figure_1_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json"; // Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json
-        let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json"; // Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json
-        let figure_3_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json"; // Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json
-        let figure_4_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json"; // Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json
-        let figure_5_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json"; // Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json
-        let figure_6_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json" //Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json
-        let figure_7_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json" //Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json
-
-
-        vegaEmbed('#Location0', figure_0_spec) 
-
-        vegaEmbed('#Location1', figure_1_spec) 
-
-        vegaEmbed('#Location2', figure_2_spec) 
-
-        vegaEmbed('#Location3', figure_3_spec) 
-
-        vegaEmbed('#Location4', figure_4_spec) 
-       
-        vegaEmbed('#Location5', figure_5_spec) 
-
-        vegaEmbed('#Location6', figure_6_spec) 
-
-        vegaEmbed('#Location7', figure_7_spec) 
 
       
+      let chart_files=[
+        "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json", // Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json", // Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json", // Project/New_Charts/Chart2_Kmeans_k3_OECD_6parameters.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json", // Project/New_Charts/Chart3_Kmeans_k3_OECD_membership.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json", // Project/New_Charts/Chart4_Mapping_k3_OECD_memberships.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json", // Project/New_Charts/Chart5_boxplot_6types_by_clsuter.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json", //Project/New_Charts/Chart6_Kmeans_K4_OECD_6parameters_Robustness.json
+         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json" //Project/New_Charts/Chart7_Kmeans_K4__OECD_membership_Robustness.json
+        ];
+
+        let chart_ids = [
+            "Location0",
+            "Location1",
+            "Location2",
+            "Location3",
+            "Location4",
+            "Location5",
+            "Location6",
+            "Location7"
+        ]
+
+        for(let i=0; i<chart_files.length; i++) {
+
+            console.log(chart_ids[i], chart_files[i])
+
+            vegaEmbed(`#${chart_ids[i]}`, chart_files[i])
+        }
 
     </script>
 

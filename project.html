@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="stylesheet" type="text/css" href="Project_CSS.css">
     <title>My Project</title> 
 
@@ -42,11 +43,12 @@
             padding-right: 50px;  
             box-sizing: border-box
         }
+
         .toc-side {
             position: fixed;
-            top: 120px;              /* 上からの位置（ヘッダーと被らない） */
-            right: 20px;             /* 右余白内に配置 */
-            width: 220px;            /* 横幅を固定して被りを防ぐ */
+            top: 120px;             
+            right: 20px;          
+            width: 220px;           
             background: #ffffff;
             border: 1px solid #ddd;
             border-radius: 12px;
@@ -80,15 +82,17 @@
         
         @media (max-width: 768px) {
             .toc-side {
-                display: none;
+                display: none !important;
             }
         }
 
     </style>
 
 </head>
+
 <body>
-     <nav class="toc-side">
+    
+    <nav class="toc-side">
     <div class="toc-box">
       <div class="toc-title">You can jump to each chapter in the Visualisation section by these buttons.</div>
       <a href="#c0">Introduction</a>
@@ -210,7 +214,7 @@
            <p>
             The source and brief explanations of the indicators above: All of them are from the World Bank.<br>
              <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
-             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a>: The proportion of a country's population that is employed<br>           
+             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate</a>: The proportion of a country's population that is employed<br>           
              <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
              <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
              <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a>: Manufacturing value added as a share of GDP<br>

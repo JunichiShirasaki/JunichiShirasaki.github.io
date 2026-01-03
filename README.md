@@ -19,8 +19,8 @@ This section contains weekly portfolio exercises for the Data Visualisation cour
 This project explores cross-country similarities and differences among OECD countries using interactive data visualisation.
 
 **Research question**  
-> How can we understand heterogeneity among OECD countries?  
-> Do distinct socio-economic clusters exist, and if so, how many?
+> How do OECD countries cluster into distinct socio-economic structures?  
+> How much heterogeneity remains within these structural clusters?
 
 **[View the project page](https://junichishirasaki.github.io/project.html).**
 
@@ -30,7 +30,7 @@ This project explores cross-country similarities and differences among OECD coun
 ## Technologies Used
 - HTML / CSS / JavaScript  
 - Vega-Lite  
-- Python in Goodl Colab
+- Python in Google Colab
 - OECD open data  
 
 ---

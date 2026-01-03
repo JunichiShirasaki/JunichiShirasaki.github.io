@@ -35,50 +35,54 @@
         flex:0 0  auto;
         width: auto !important;
         max-width: 100%;}
+        
+        .content{
+            max-width: 900px;    
+            margin: 0 auto;
+            padding-right: 50px;  
+            box-sizing: border-box
+        }
+        .toc-side {
+            position: fixed;
+            top: 120px;              /* 上からの位置（ヘッダーと被らない） */
+            right: 20px;             /* 右余白内に配置 */
+            width: 220px;            /* 横幅を固定して被りを防ぐ */
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+        
+        .toc-side p {
+            margin: 0 0 10px 0;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .toc-side a {
+            display: block;
+            text-align: center;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border: 1px solid #c33;
+            border-radius: 999px;
+            color: #c33;
+            text-decoration: none;
+            font-size: 0.9em
+        }
 
-       /* 右側の空間（レーン）を確保：ボタンが本文や図に重ならない */
-.content{
-  max-width: 900px;      /* 好みで */
-  margin: 0 auto;
-  padding-right: 50px;  /* ← これが右レーンの幅（toc分の余白） */
-  box-sizing: border-box;
-}
-
-/* 右レーンに toc を配置（本文には重ならない） */
-.toc-side{
-  position: fixed;       /* 画面右側に固定 */
-  top: 90px;             /* ヘッダーの高さに合わせて調整 */
-  right: 20px;
-  width: 200px;          /* 余白より少し小さく */
-  z-index: 10;
-}
-
-.toc-box{
-  background: rgba(255,255,255,0.95);
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  padding: 12px;
-}
-
-.toc-box a{
-  display: block;
-  padding: 10px 12px;
-  margin-top: 10px;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* スマホでは右レーンがないので、toc を下に回す */
-@media (max-width: 900px){
-  .content{ padding-right: 16px; }
-  .toc-side{
-    position: static;
-    width: auto;
-    margin: 12px auto;
-    max-width: 520px;
-  }
-}
+        .toc-side a:hover {
+            background: #c33;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .toc-side {
+                display: none;
+            }
+        }
 
     </style>
 
@@ -86,10 +90,10 @@
 <body>
      <nav class="toc-side">
     <div class="toc-box">
-      <div class="toc-title">Jump</div>
-      <a href="#intro">Introduction</a>
-      <a href="#ch1">Chapter 1</a>
-      <a href="#ch2">Chapter 2</a>
+      <div class="toc-title">You can jump to each chapter in the Visualisation section by these buttons.</div>
+      <a href="#c0">Introduction</a>
+      <a href="#c1">Chapter 1</a>
+      <a href="#c2">Chapter 2</a>
     </div>
   </nav>
 
@@ -156,14 +160,6 @@
         <h2 class="section-title">
                 Discussion & Visualisation 
         </h2>
-
-            <nav class="toc">
-                You can jump to each chapter in the Visualisation section by these buttons.
-                <a href="#c0">Introduction</a>
-                <a href="#c1">Chapter 1</a>
-                <a href="#c2">Chatper 2</a>
-            </nav>
-
         
         <div class="chart-description">
             <p id="c0" class="chapter-title"> 

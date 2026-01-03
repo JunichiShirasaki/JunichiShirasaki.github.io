@@ -1,11 +1,41 @@
 # JunichiShirasaki.github.io
-# Data Visualisation - Mastr of Public Policy 2025 AT
-My protfolip tasks and project page are as follows
 
-## 1 Portfolio tasks<br>
-  You can access to the page [here](https://junichishirasaki.github.io).
+## Overview
+This repository hosts my **Data Visualisation portfolio and final project**  
+for the **MSc Public Policy (MPP), LSE – Academic Year 2025/26**.
 
-## 2 Project page<br>
-  You can access to the page [here](https://junichishirasaki.github.io/project.html)<br>
-  This project explore the question "How can we understand the OECD countries' homogeniousty? How many clusters are there?"
+All pages are published via GitHub Pages.
+
+---
+
+## Portfolio Tasks
+This section contains weekly portfolio exercises for the Data Visualisation course.
+**[View the portfolio tasks](https://junichishirasaki.github.io).**
+
+
+---
+
+## Final Project
+This project explores cross-country similarities and differences among OECD countries using interactive data visualisation.
+
+**Research question**  
+> How can we understand heterogeneity among OECD countries?  
+> Do distinct socio-economic clusters exist, and if so, how many?
+
+**[View the project page](https://junichishirasaki.github.io/project.html).**
+
+
+---
+
+## Technologies Used
+- HTML / CSS / JavaScript  
+- Vega-Lite  
+- Python in Goodl Colab
+- OECD open data  
+
+---
+
+## Author
+Junichi Shirasaki  
+MSc Public Policy, London School of Economics
  

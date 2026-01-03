@@ -24,10 +24,7 @@ This project explores cross-country similarities and differences among OECD coun
 
 **[View the project page](https://junichishirasaki.github.io/project.html).**
 
-
----
-
-## Technologies Used
+## Technologies Used in the project
 - HTML / CSS / JavaScript  
 - Vega-Lite  
 - Python in Google Colab

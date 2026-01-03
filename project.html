@@ -36,42 +36,65 @@
         width: auto !important;
         max-width: 100%;}
 
-        .toc {
-            position: fixed;
-            top: 120px;          
-            right: 20px;         
-            width: 115px;
-            max-width: 115px;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            z-index: 1000;
-        }
- 
-        .toc a{
-            padding: 6px 10px;
-            border: 1px solid #f00f1e;
-            border-radius: 999px;
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .toc {
-                position: static;
-                width: 100%;
-                max-width: none;
-                margin: 10px auto;      
-            }
-        }
+       /* 右側の空間（レーン）を確保：ボタンが本文や図に重ならない */
+.content{
+  max-width: 900px;      /* 好みで */
+  margin: 0 auto;
+  padding-right: 50px;  /* ← これが右レーンの幅（toc分の余白） */
+  box-sizing: border-box;
+}
+
+/* 右レーンに toc を配置（本文には重ならない） */
+.toc-side{
+  position: fixed;       /* 画面右側に固定 */
+  top: 90px;             /* ヘッダーの高さに合わせて調整 */
+  right: 20px;
+  width: 200px;          /* 余白より少し小さく */
+  z-index: 10;
+}
+
+.toc-box{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.toc-box a{
+  display: block;
+  padding: 10px 12px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* スマホでは右レーンがないので、toc を下に回す */
+@media (max-width: 900px){
+  .content{ padding-right: 16px; }
+  .toc-side{
+    position: static;
+    width: auto;
+    margin: 12px auto;
+    max-width: 520px;
+  }
+}
 
     </style>
 
 </head>
 <body>
+     <nav class="toc-side">
+    <div class="toc-box">
+      <div class="toc-title">Jump</div>
+      <a href="#intro">Introduction</a>
+      <a href="#ch1">Chapter 1</a>
+      <a href="#ch2">Chapter 2</a>
+    </div>
+  </nav>
+
+  <main class="content">
+
     <h1 class="big" style="margin-bottom: 0px;"> 
         My project page<br>
     </h1>
@@ -402,6 +425,6 @@
 
     </script>
 
-
+</main>
 </body>
 </html>

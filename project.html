@@ -36,6 +36,39 @@
         width: auto !important;
         max-width: 100%;}
 
+        .toc {
+            position: fixed;
+            top: 120px;          
+            right: 20px;         
+            width: 115px;
+            max-width: 115px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+        }
+ 
+        .toc a{
+            padding: 6px 10px;
+            border: 1px solid #f00f1e;
+            border-radius: 999px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 900px) {
+            .toc {
+                position: static;
+                width: auto;
+                margin: 0 auto 16px auto;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
     </style>
 
 </head>
@@ -46,7 +79,8 @@
     <h1 class="big" style="margin-bottom: 0px;"> 
         How do OECD countries cluster into distinct socio-economic structures, and how much heterogeneity remains within these structural clusters?
     </h1>
-        <p style="margin-top: 0px; color: rgb(55, 31, 50)">
+
+     <p style="margin-top: 0px; color: rgb(55, 31, 50)">
         <a href="index.html">Portfolio Page</a> | 
         <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
     </p>
@@ -100,9 +134,17 @@
         <h2 class="section-title">
                 Discussion & Visualisation 
         </h2>
+
+            <nav class="toc">
+                You can jump to each chapter in the Visualisation section by these buttons.
+                <a href="#c0">Introduction</a>
+                <a href="#c1">Chapter 1</a>
+                <a href="#c2">Chatper 2</a>
+            </nav>
+
         
         <div class="chart-description">
-            <p class="chapter-title"> 
+            <p id="c0" class="chapter-title"> 
                 <strong>Introduction: Are OECD countries homogeneous?<br>
             </strong>
             </p>
@@ -125,7 +167,7 @@
 
         <div class="chart-description">
           
-            <p class="chapter-title"> 
+            <p id="c1" class="chapter-title"> 
                 <strong>Chapter 1: OECD countries are not homogeneous.<br>
             </strong>
             </p>
@@ -237,12 +279,14 @@
         <div id="Location5"></div> 
 
         <div class="chart-description">
-            <p class="chapter-title"> 
+            <p id="c2" class="chapter-title"> 
                 <strong>Chapter 2: How about k=4?<br>
                 </strong>
             </p>
+
             <p class="chart-title"> 
-                <strong>Chart6: Four patterns in OECD countries: K-means clustering?</strong>
+                <strong>Chart6<br> 
+                Four patterns in OECD countries: K-means clustering?</strong>
             </p>     
             <p> 
                 This shows the structural profile using k-means clustering with k=4.
@@ -258,10 +302,14 @@
         </div>
         <div id="Location6"></div>
 
+  
+
         <div class="chart-description">
             <p class="chart-title"> 
-                <strong>Chart7: Which countries are in cluster D? </strong>
-            </p>     
+                <strong>Chart7<br>
+                 Which countries are in cluster D?</strong>
+            </p> 
+
             <p> 
                 This shows how many countries are in each cluster with k=4.
                 Compared to k=3, cluster A is entirely unchanged, and most countries in cluster B and C remain in the same groups.

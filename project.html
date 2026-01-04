@@ -49,6 +49,7 @@
             padding: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             z-index: 1000;
+            transition: opacity 0.25s ease;
         }
         
         .toc-side p {
@@ -86,7 +87,7 @@
       <div class="toc-title">You can jump to each chapter in the Visualisation section by these buttons.</div>
       <a href="#c0">Introduction (Chart 0)</a>
       <a href="#c1">Chapter 1 (Chart 1 - 5)</a>
-      <a href="#c2">Chapter 2 (Chart 6 -7 )</a>
+      <a href="#c2">Chapter 2 (Chart 6 - 7)</a>
     </div>
     </nav>
 
@@ -410,6 +411,26 @@
 
             vegaEmbed(`#${chart_ids[i]}`, chart_files[i])
         }
+
+         const nav = document.querySelector(".toc-side");
+         let timer;
+         
+         function showNav() {
+            nav.style.opacity = "1";
+            nav.style.pointerEvents = "auto";
+        }
+        
+        function fadeNav() {
+            nav.style.opacity = "0";   
+            nav.style.pointerEvents = "none";
+        }
+        fadeNav();
+        
+        window.addEventListener("scroll", () => {
+            showNav();
+            clearTimeout(timer);
+            timer = setTimeout(fadeNav, 800);
+        });
 
     </script>
 

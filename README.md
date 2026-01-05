@@ -11,7 +11,7 @@ All pages are published via GitHub Pages.
 ## Portfolio Tasks
 This section contains weekly portfolio exercises for the Data Visualisation course.
 **[View the portfolio tasks](https://junichishirasaki.github.io/portfolio.html).**
-> portfolio.hetml
+> portfolio.html
 
 ---
 
@@ -23,7 +23,7 @@ This project explores cross-country similarities and differences among OECD coun
 > How much heterogeneity remains within these structural clusters?
 
 **[View the project page](https://junichishirasaki.github.io/project.html).**
-> project.hetml
+> project.html
 
 ## Technologies Used in the project
 - HTML / CSS / JavaScript  

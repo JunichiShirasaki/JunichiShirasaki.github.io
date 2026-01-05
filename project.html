@@ -93,6 +93,7 @@
 
 
     <h1 class="big" style="margin-bottom: 0px;"> 
+        Candidate number: 60542<br>
         My project page<br>
     </h1>
     <h1 class="big" style="margin-bottom: 0px;"> 
@@ -100,8 +101,9 @@
     </h1>
 
      <p style="margin-top: 0px; color: rgb(55, 31, 50)">
-        <a href="index.html">Portfolio Page</a> | 
-        <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a>
+        <a href="portfolio.html">Portfolio Page</a> | 
+        <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a> |
+        <a href="index.html">Back to the top page</a>
     </p>
 
     
@@ -360,7 +362,7 @@
             <p> 
                 World Bank Open Data<br>
              <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Income level (GDP per capita)</a>: Average economic output per person (PPP-adjusted)<br>
-             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate:</a>: The proportion of a country's population that is employed<br>           
+             <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">Employment rate</a>: The proportion of a country's population that is employed<br>           
              <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">Size of government</a>: The share of GDP spent on government-provided goods and services<br>
              <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Longevity</a>: Life expectancy at birth<br>
              <a href="https://data.worldbank.org/indicator/NV.IND.MANF.ZS">Manufacturing intensity</a>: Manufacturing value added as a share of GDP<br>
@@ -382,7 +384,7 @@
 
     <script>
 
-      
+      // displaying eight charts with loop
       let chart_files=[
         "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json", // Project/New_Charts/Chart0_simpe_bar_chart_aging_population.json
          "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json", // Project/New_Charts/Chart1_Heatmap_OECD_six_parameters.json
@@ -412,6 +414,7 @@
             vegaEmbed(`#${chart_ids[i]}`, chart_files[i])
         }
 
+        // the following code is for navigation buttons.
          const nav = document.querySelector(".toc-side");
          let timer;
          

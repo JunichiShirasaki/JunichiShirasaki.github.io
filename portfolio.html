@@ -1,0 +1,589 @@
+
+
+
+<!DOCTYPE html>
+<html> 
+
+<head>    
+
+    <link rel="stylesheet" type="text/css" href="index_CSS.css">
+    <title>My Portfolio</title> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        .cc-title {
+        color: green;
+        text-align: center;
+        }
+        .chart-title strong {
+         font-weight: 800;
+         font-size: 1.1em;
+        }
+        #charts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px;
+        }
+        
+        .chart-description + figure {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+        
+        .chart-description + figure .vega-embed {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+
+
+
+<body> 
+    <h1 class="big" style="margin-bottom: 0px;"> 
+        Candidate number: 60542
+    </h1>
+    <p style="margin-top: 0px; color: rgb(55, 31, 50)">
+        <a href="/project.html">Project Page</a> | 
+        <a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io">GitHub</a> |
+        <a href="index.html">Back to the top page</a>
+    </p>
+    <h3 class="small"> 
+        My portfolio of charts  
+    </h3>
+
+
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC1: Hosting. Display charts in your own site<br> 
+            </h2>
+            <p> 
+                The first task is to add two charts using the vegaEmbed function.<br>
+                My graphs in this code challenges are taken from the Liberation Day,in the Economics Observatory webpage.
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart1<br>
+                 UK exports to the US, by transport mode</strong>
+            </p>     
+            <p> 
+                This bar chart illustrates UK exports to the US by mode of transport. Air freight accounts for the largest share, around $38 billion, followed by sea transport at about $30 billion.
+            </p>
+        </div>
+        <figure id="Location1"></figure> 
+            <p> 
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a> <br><!-- URL: Economic Observatory -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC1_Chart1_from_Economics_Observatory.json"> here</a>
+            </p>
+
+         <div class="chart-description">
+               <p class="chart-title"> 
+                <strong>Chart2<br>
+                 Reciprocal tariffs, major trading partners</strong>
+            </p> 
+            <p> 
+                This bar graph presents reciprocal tariff rates among major US trading partners. Vietnam accounts for the highest rate at 46%.
+            </p> 
+            </div>
+        <figure id="Location2"></figure> 
+            <p> 
+                Data Source:<a href="https://www.economicsobservatory.com/liberation-day"> Economics Observatory</a><br> <!-- URL: Economic Observatory -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/fig1_reciprocal-tariffs.json"> here</a>
+
+            </p>
+    </section>
+
+
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC2. Building. Create your own visualisations<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to create and embed two charts using the create tool in the Economics Observatory Data Hub.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart3<br>
+                 Nuclear Power Generation in Japan (GWh)</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual nuclear power generation in Japan in GWh, using data from the IEA via the Economics Observatory API.
+            </p>
+        </div>
+        <figure id="Location3"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC2_Chart3_Json_Graph_Japan_Nuclear.json"> here</a>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart4<br>
+                 Renewable Energy Generation in China (GWh)</strong>
+            </p> 
+            <p> 
+                This line chart illustrates annual renewable energy output in China in GWh, using data from the IEA via the Economics Observatory API.
+            </p>
+        </div>
+        <figure id="Location4"></figure>
+         <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC2_Chart4_Json_Graph_China_Renewable.json"> here</a>
+        </p>
+
+    </section>
+    
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC3. Debate. Use a visualisation in policy commentary<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to create and embed two charts and comment on what I find.<br>
+                The topic I set is "Do low unemployment rates in the UK necessarily indicate a strong labour market?".
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart5<br>
+                 Unemployment rate in the UK</strong>
+            </p> 
+            <p> 
+                UK unemployment is much lower than in the 1980s and 1990s peaks, which can mean fewer people are unemployed while actively looking for work.
+            </p>
+        </div>
+        <figure id="Location5"></figure>
+        <p> 
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms"> Office for National Statistics</a> <br><!-- URL: Office for National Statistics -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC3_wk2_Unemployment_rate_UK.json"> here</a>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart6<br>
+                 Employment rate in the UK</strong>
+            </p> 
+            <p> 
+             The employment rate grows only slowly, which can suggest low unemployment does not necessarily mean more people are actually working.
+            </p>
+        </div>
+        <figure id="Location6"></figure>
+        <p> 
+                Data Source:<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms"> Office for National Statistics</a> <br><!-- URL: Office for National Statistics -->
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC3_Employment_rate_UK.json"> here</a>
+        </p>
+    </section>
+    
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC4. Replication. Re-create, then improve, someone else's chart.<br> 
+            </h2>
+
+            <p> 
+                The task in this code challenge is to replicate a chart used by some organizations and to modify it into more appropriate manner.<br>
+                This chart in the image below was used by Fukushima TV to compare attitudes toward blaming individuals for COVID-19 infection in different countries. 
+            </p>
+
+             <!-- CC4: Original chart image -->
+            <figure class="chart-image">
+             <img
+              src="CC4 2025-12-17 3.03.08.png"
+              alt="Chart used by Fukushima TV, cited in Livedoor News (23 September 2020)"
+              style="max-width: 800px; width: 100%; height: auto; display: block; margin: 0 auto;"
+             >
+ 
+           <figcaption style="text-align: center; font-size: 0.95em;">
+            Chart originally used by Fukushima TV, cited and discussed in Livedoor News (23 September 2020)
+           </figcaption>
+           <p>
+            Source:
+            <a href="https://news.livedoor.com/article/image_detail/18943368/?img_id=26583270" target="_blank" rel="noopener noreferrer"> 
+              Livedoor News (23 September 2020), discussing a chart used by Fukushima TV
+            </a> 
+
+         </figure>
+
+            <p class="chart-title"> 
+                <strong>Chart7<br>
+                 The replication of the chart above</strong>
+            </p> 
+            <p> 
+                I replicated the original chart in Vega-Lite. I approximated the data to match the visual structure, colors and axes. (I translated Japanese words into English.)
+            </p>
+        </div>
+        <figure id="Location7"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC4_Repulicate.json"> here</a>
+        </p>
+      
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart8<br>
+                 Improved version</strong>
+            </p> 
+            <p> 
+             I corrected the truncated axis, restored a full 0-100% scale, clarified labels and reordered categories to avoid misleading visual emphasis.
+            </p>
+        </div>
+        <figure id="Location8"></figure>
+        <p>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC4_Improved.json"> here</a>
+        </p>
+
+      
+    </section>
+
+
+<section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC5. Accessing data: Scraper and API<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to create and embed two types of charts: using an API and web scraping.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart9<br>
+                 The chart using API: The difference in the trends of carbon dioxide emissions in Japan and the United Kingdom</strong>
+            </p> 
+            <p> 
+                This chart shows the trends in per capita carbon dioxide emissions in Japan and the United Kingdom since 1970.
+            </p>
+        </div>
+        <figure id="Location9"></figure>
+        <p> 
+                Data Source: <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">The World Bank</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC5_API_worldbank_CO2emission_Japan_UK.json"> here</a><br>
+                Base URL for API of the World Bank: https://api.worldbank.org/v2/ <br>
+                The endpoint of the API I used in this chart: country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5<br>
+                To collect data using the World Bank API, I identified the codes of countries for Japan and the United Kingdom, and the indicator code for Carbon Dioxide emissions.<br>
+                The full URL used in the chart is as follows:<br>
+                <strong>https://api.worldbank.org/v2/country/JP;GB/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=1000</strong>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart10<br>
+                 The chart using scraping: Top three countries by manufacturing output</strong>
+            </p> 
+            <p> 
+             I scraped a Wikipedia table, cleaned the data into tidy long format and visualised top manufacturing output (China, US, Japan).
+            </p>
+        </div>
+        <figure id="Location10"></figure>
+        <p> 
+            Data Source:<a href="https://en.wikipedia.org/wiki/Manufacturing"> Wikipedia: Manufacturing</a> 
+            <!-- URL: Wikipedia -->
+        </p>
+        <p>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1R6uvBuiysMUilEiPfHlBI186tywYBUxI?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC5_Scraping_manufacturing_China_USA_Japan.json"> here</a><br>
+        </p>
+    </section>
+
+
+<section>
+            <h2 class="cc-title">
+                CC6. Loops. Build a dashboard.<br> 
+            </h2>
+
+            <p> 
+                The task in this code challenge is to use a loop to batch download six different series as JSON files and use a loop in my Javascript in order to embed the six charts.<br>
+                Using a loop in Google Colab, I downloaded six World Bank time series data as JSON files and stored them on GitHub. 
+                These raw files are used as data sources for the dashboard below.
+                In embedding the six charts, I used a loop in my JavaScript. 
+            </p>
+            
+            <p>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1otV3OxNFj0UaAHLzYeAgbRrwelTm9rBv?usp=sharing">here</a>,
+            </p>
+
+            
+<div id="charts-grid">
+  <div id="chart11"></div>
+  <div id="chart12"></div>
+  <div id="chart13"></div>
+  <div id="chart14"></div>
+  <div id="chart15"></div>
+  <div id="chart16"></div>
+</div>
+
+            <p> 
+                Data Source from the World Bank: <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP (current US$)</a>, <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG">GDP growth (annual %)</a>,  <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">Inflation, consumer prices (annual %)</a>, <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy at birth, total (years)</a>, <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">Population, total</a>, <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS">Unemployment, total (% of total labor force)</a>,
+            </p>
+
+ </section>
+
+
+ <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC7. Maps. Base maps and choropleths<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to produce two maps: Scotland and Wales. One of them is a coordinates map and another is a choropleth.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart11<br>
+                 Chart of Scotland: Coordinates map</strong>
+            </p> 
+            <p> 
+            This coordinates map visualises the locations of World Heritage Sites in Scotland using longitude and latitude data. The Antonine Wall is treated separately and represented by a single reference point because it is a linear site rather than a point-based location.
+            </p>
+        </div>
+        <figure id="Location17"></figure>
+        <p> 
+                Data Source: <a href="https://worldheritageuk.org/world-heritage-sites-uk-list/scotland/">World Heritage UK</a>,<a href="https://whc.unesco.org/en/list/">UNESCO</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC7_map_Scotland_coordination.json"> here</a><br>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart12<br>
+                 Chart of Wales: Choropleth map</strong>
+            </p> 
+            <p> 
+             I created a choropleth map of the percentage of Welsh speakers by local authority in Wales (Census 2021).<br>
+             I cleaned and arranged the census data, using Python in Google Colab. Then, the data were joined to local authority boundaries in Vega-Lite.
+            </p>
+        </div>
+        <figure id="Location18"></figure>
+        <p> 
+            Data Source:<a href="https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1"> Office for National Statistics</a> 
+            <!-- URL: Office for National Statistics -->
+        </p>
+        <p>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1zbBLfZU5Y_HCtZG4zYzXFB7ohTKwNx7E?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC7_map_Wales_Choropleths.json"> here</a><br>
+        </p>
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC8. Big Data. Extracting a story from millions of prices<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to produce two charts using either of the two UK prices datasets.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart13<br>
+                 Chart of sugar price</strong>
+            </p> 
+            <p> 
+            Using the dataset of AutoCPI, I created this chart below. In colab notebook with python, I accessed, extracted and organized the dataset. In the creation of this chart, I used altair and saved the chart in the form of json.
+            </p>
+        </div>
+        <figure id="Location19"></figure>
+        <p> 
+                Colab Notebook: <a href="https://colab.research.google.com/drive/1mOgoqaXpgngnDEozHn7dql4h_R0-GTYd?usp=sharing">here</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC8_chart1_sugar_prices.json"> here</a><br>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart14<br>
+                 Chart of sugar prices by region</strong>
+            </p> 
+            <p> 
+             I used the dataset of AutoCPI to make this chart. 
+             We can compare the prices of sugar by region.
+            </p>
+        </div>
+        <figure id="Location20"></figure>
+        
+        <p>
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1CXeiiHjGUi7pGqDRfyuxMrTIP3Gp_pOy?usp=sharing">here</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC8_chart2_sugar_prices_region.json"> here</a><br>
+        </p>
+    </section>
+
+
+
+    <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC9. Two interactive charts<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to produce two interactive charts.<br>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart15<br>
+                 Slider: Changing the starting year of the chart</strong>
+            </p> 
+            <p> 
+            Using slider, I created this chart below. This chart shows the change in the renewable energy consumption trends in Japan.
+            </p>
+        </div>
+        <figure id="Location21"></figure>
+        <p> 
+                Data Source: <a href="https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS">The World Bank</a><br>
+                JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"> here</a><br>
+        </p>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart16<br>
+                 Dropdown: Choosing one country from the dropbox</strong>
+            </p> 
+            <p> 
+             Using dropbox, I created this chart below. This chart shows the change in the research and development expenditure trends in Japan, Uk and US.
+            </p>
+        </div>
+        <figure id="Location22"></figure>
+        
+        <p>
+            Data Source:<a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">The World Bank</a><br>
+            JSON file in my GitHub:<a href="https://github.com/JunichiShirasaki/JunichiShirasaki.github.io/blob/main/CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"> here</a><br>
+        </p>
+    </section>
+
+
+        <section>
+        <div class="chart-description">
+            <h2 class="cc-title">
+                CC10. Advanced Analysis and Machine Learning<br> 
+            </h2>
+            <p> 
+                The task in this code challenge is to produce an advanced analytics chart and conduct machine learning.<br>
+                <strong>Hypothesis: After controlling for income, OECD countries differ in per-capita CO2 emissions, indicating the role of non-income factors such as energy mix and policy.</strong>
+            </p>
+            <p class="chart-title"> 
+                <strong>Chart17<br>
+                 The correlation between carbon dioxide emissions and GDP in OECD countries</strong>
+            </p> 
+            <p> 
+            This chart illustrates the relationship between GDP per capita and carbon dioxide emissions per capita among OECD countries in 2019.
+            Overall, this suggests that a positive relationship between economic prosperity and per capita carbon dioxide emissions. 
+            However we can see that there is substantial variation around the regression line. 
+            </p>
+        </div>
+        <figure id="Location23"></figure>
+
+        <div class="chart-description">
+            <p class="chart-title"> 
+                <strong>Chart18<br>
+                 De-trended CO2 emissions per capita</strong>
+            </p> 
+            <p> 
+             This chart shows de-trended CO2 emissions per capita.
+             Positive values indicate countries emitting more CO2 than predicted by income, while negative values indicate under-performance.<br>
+             From chart 17 and 18, I can find as follows: <br>
+             Although higher income tends to increase CO2 emissions, larger differences remain across OECD countries after controlling for income, which may suggest the importance of energy policy choices.
+            </p>
+        </div>
+        <figure id="Location24"></figure>
+        
+        <p>
+            Data Source from the World Bank: <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD">GDP per capita</a>, <a href="https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5">CO2 emissions per capita</a><br>
+                
+            Data for GDP per capita and CO2 emissions per capita were retreived from the World Bank API.<br>
+            The datasets were cleaned, merged and filtered to include OECD countries only in the year of 2019.<br>
+            I used sklearn in the Colab Notebook below. The method is supervised machine learning (linear regression model)<br>
+            X matrix is GDP per capita and Y vecor is CO2 emissions per capita.<br>
+                
+            Colab Notebook:<a href="https://colab.research.google.com/drive/1i1ZH6ljIHoLZ1epeFWIXDCwB8I6xE1E4?usp=sharing">here</a>
+
+        </p>
+    </section>
+
+
+    <script>
+        
+
+        let figure_1_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC1_Chart1_from_Economics_Observatory.json"; // /CC1_Chart1_from_Economics_Observatory.json
+        let figure_2_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/fig1_reciprocal-tariffs.json"; // /fig1_reciprocal-tariffs.json
+        let figure_3_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart3_Json_Graph_Japan_Nuclear.json"; // CC2_Chart3_Json_Graph_Japan_Nuclear.json
+        let figure_4_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC2_Chart4_Json_Graph_China_Renewable.json"; // CC2_Chart4_Json_Graph_China_Renewable.json
+        let figure_5_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC3_wk2_Unemployment_rate_UK.json"; // CC3_wk2_Unemployment_rate_UK.json
+        let figure_6_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC3_Employment_rate_UK.json"; // CC3_Employment_rate_UK.json
+        let figure_7_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC4_Repulicate.json"; // CC4_Repulicate.json
+        let figure_8_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC4_Improved.json"; // CC4_Improved.json
+        let figure_9_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC5_API_worldbank_CO2emission_Japan_UK.json"; // CC5_API_worldbank_CO2emission_Japan_UK.json
+        let figure_10_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC5_Scraping_manufacturing_China_USA_Japan.json"; // CC5_Scraping_manufacturing_China_USA_Japan.json
+        let figure_17_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_map_Scotland_coordination.json"; // CC7_map_Scotland_coordination.json
+        let figure_18_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC7_map_Wales_Choropleths.json"; // CC7_map_Wales_Choropleths.json
+        let figure_19_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC8_chart1_sugar_prices.json"; // CC8_chart1_sugar_prices.json
+        let figure_20_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC8_chart2_sugar_prices_region.json"; // CC8_chart2_sugar_prices_region.json
+        let figure_21_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json"; // CC9_Chart1_Scale_Renewable_energy_consumption_Japan.json
+        let figure_22_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json"; // CC9_Chart2_Dropdown_Research_and_development_Japan_UK_USA.json
+        let figure_23_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC10_Chart1_GDP_CO2_OECD_2019.json"; // CC10_Chart1_GDP_CO2_OECD_2019.json
+        let figure_24_spec = "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC10_chart2_residuals_OECD_2019.json"; // CC10_chart2_residuals_OECD_2019.json
+
+
+        vegaEmbed('#Location1', figure_1_spec) 
+
+        vegaEmbed('#Location2', figure_2_spec) 
+
+        vegaEmbed('#Location3', figure_3_spec) 
+
+        vegaEmbed('#Location4', figure_4_spec) 
+       
+        vegaEmbed('#Location5', figure_5_spec) 
+        
+        vegaEmbed('#Location6', figure_6_spec) 
+        
+        vegaEmbed('#Location7', figure_7_spec) 
+        
+        vegaEmbed('#Location8', figure_8_spec) 
+        
+        vegaEmbed('#Location9', figure_9_spec) 
+       
+        vegaEmbed('#Location10', figure_10_spec) 
+
+        vegaEmbed('#Location17', figure_17_spec) 
+ 
+        vegaEmbed('#Location18', figure_18_spec) 
+        
+        vegaEmbed('#Location19', figure_19_spec) 
+
+        vegaEmbed('#Location20', figure_20_spec) 
+        
+        vegaEmbed('#Location21', figure_21_spec) 
+        
+        vegaEmbed('#Location22', figure_22_spec) 
+        
+        vegaEmbed('#Location23', figure_23_spec) 
+        
+        vegaEmbed('#Location24', figure_24_spec) 
+
+
+
+        let chart_files=[
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart1_WB_JP_gdp_current_USd.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart2_WB_JP_gdp_growth.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart3_WB_JP_inflation_cpi.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart4_WB_JP_life_expectancy.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart5_WB_JP_population.json",
+            "https://raw.githubusercontent.com/JunichiShirasaki/JunichiShirasaki.github.io/refs/heads/main/CC6_chart6_WB_JP_unemployment.json"
+        ];
+
+        let chart_ids = [
+            "chart11",
+            "chart12",
+            "chart13",
+            "chart14",
+            "chart15",
+            "chart16"
+        ]
+
+        for(let i=0; i<chart_files.length; i++) {
+
+            console.log(chart_ids[i], chart_files[i])
+
+            vegaEmbed(`#${chart_ids[i]}`, chart_files[i], { actions: false })
+        }
+
+    </script>
+
+</body>
+    
+</html>

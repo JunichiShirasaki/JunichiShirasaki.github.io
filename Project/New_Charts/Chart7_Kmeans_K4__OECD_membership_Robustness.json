@@ -80,7 +80,7 @@
           }
         }
       },
-      "spec": {
+      "spec": { 
         "width": 170,
         "height": 320,
         "layer": [
